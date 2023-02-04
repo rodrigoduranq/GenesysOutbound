@@ -16,7 +16,7 @@ $(document).ready(function() {
 	pureCloudSession = purecloud.platform.PureCloudSession({
 		environment: 'mypurecloud.com',
 		strategy: 'implicit',
-		clientId: '6a9c1924-d348-4f1b-bf4f-a8816ceb4230',
+		clientId: '60feb42b-6ef0-4761-ad7f-95ac491ee688',
 		redirectUrl: window.location.href,
 		storageKey: 'queue-notifications-example-auth-token',
 		timeout: 10000
