@@ -11,6 +11,33 @@ var _webSocket;
 var _channelId;
 var _queues = [];
 
+
+
+/*
+let apiInstance = new platformClient.OutboundApi();
+
+let opts = { 
+  'pageSize': 25, // Number | Page size. The max that will be returned is 100.
+  'pageNumber': 1, // Number | Page number
+  'sortBy': "", // String | Sort by
+  'sortOrder': "ascending" // String | Sort order
+};
+
+apiInstance.getOutboundCampaigns(opts)
+  .then((data) => {
+    console.log(`getOutboundCampaigns success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getOutboundCampaigns');
+    console.error(err);
+  });
+
+*/
+
+
+
+
+
 $(document).ready(function() {
 	// Create PC session
 	pureCloudSession = purecloud.platform.PureCloudSession({
