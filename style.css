@@ -20,11 +20,13 @@ html, body, div, span, p {
 }
 
 
-      nav {
-        width: 200px; /* Ancho del menú */
-        background-color: #f1f1f1; /* Color de fondo */
-        float: left; /* Posicionamiento */
+      nav  {
+        display: block; /* Hace que los enlaces ocupen todo el ancho del elemento */
+        padding: 10px; /* Espacio interno */
+        text-decoration: none; /* Elimina la decoración del enlace */
+        color: #333; /* Color del texto */
       }
+
       
       nav ul {
         list-style-type: none; /* Elimina los puntos de la lista */
