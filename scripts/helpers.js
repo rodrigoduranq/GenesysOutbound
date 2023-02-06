@@ -12,9 +12,12 @@ var helpers = {
 		$.each(queueList, function(index, queue) {
 			var tableRow = '<tr id="' + queue.id + '">' +
 					'<td>' + queue.name + '</td>' +
-					'<td><button id="' + queue.id + '-button" class="queueButton btn btn-default" onclick="">SUBSCRIBE</button></td>' +
+					'<td><button id="' + queue.id + '-button" class="queueButton btn btn-default" onclick="updateRight('Actualizado  ' + queue.id)">MOSTRAR</button></td>' +   /// AGARRAR REFERENCIA DE LAS COLAS PARA ONCLICK
 				'</tr>';
 			$('#queuesTableBody').append(tableRow);
 		})
 	}
 };
+
+
+///// toggleQueueSubscription(\'' + queue.id + '\')"
