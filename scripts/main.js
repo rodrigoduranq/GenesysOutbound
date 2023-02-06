@@ -65,7 +65,7 @@ $(document).ready(function() {
 		})
 		.then(function(getMeResult) {
 			console.log(getMeResult);
-      console.log ("Hello World");
+      console.log ('Hello World');
 			// Store the "me" object
 			_me = getMeResult;
 
@@ -96,7 +96,9 @@ function getQueues(pageSize = 100, pageNumber = 1, sortBy, name, active) {
 
 // Implementation of get queues to recursively get all queues and fulfill the promise when done
 function getQueuesImpl(queuesList, pageSize, pageNumber, sortBy, name, active, fulfill, reject) {
-	// Invoke API
+
+  console.log('En getQueueImpl ');
+
 	routingApi.getQueues(pageSize, pageNumber, sortBy, name, active)
 			.then(function(getQueuesResponse) {
 				try {
