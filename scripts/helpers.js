@@ -12,7 +12,7 @@ var helpers = {
 		$.each(queueList, function(index, queue) {
 			var tableRow = '<tr id="' + queue.id + '">' +
 					'<td>' + queue.name + '</td>' +
-					'<td><button id="' + queue.id + '-button" class="queueButton btn btn-default" onclick="updateRight('Actualizado')">MOSTRAR</button></td>' +   /// AGARRAR REFERENCIA DE LAS COLAS PARA ONCLICK
+					'<td><button id="' + queue.id + '-button" class="queueButton btn btn-default" onclick="">MOSTRAR</button></td>' +   /// AGARRAR REFERENCIA DE LAS COLAS PARA ONCLICK
 				'</tr>';
 			$('#queuesTableBody').append(tableRow);
 		})
