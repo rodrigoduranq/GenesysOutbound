@@ -7,107 +7,15 @@ var helpers = {
 	    if (!results) return '';
 	    if (!results[2]) return '';
 	    return decodeURIComponent(results[2].replace(/\+/g, " "));
-	}, 
+	},
 	displayQueuesList: function(queueList) {
 		$.each(queueList, function(index, queue) {
-			var tableRow = '<tr id="' + queue.id + '">' + 
+			var tableRow = '<tr id="' + queue.id + '">' +
 					'<td>' + queue.name + '</td>' +
-					'<td><button id="' + queue.id + '-button" class="queueButton btn btn-default" onclick="toggleQueueSubscription(\'' + queue.id + '\')">SUBSCRIBE</button></td>' +
+					'<td><button id="' + queue.id + '-button" class="queueButton btn btn-default" onclick="">SUBSCRIBE</button></td>' +
 				'</tr>';
 			$('#queuesTableBody').append(tableRow);
 		})
-	},
-	generateParticipantDataCells: function(participant) {
-		var wrapup = participant.wrapup ? 
-			participant.wrapup.code : 
-			participant.wrapupRequired ?
-				'<i>awaiting</i>' :
-				'';
-
-		return '<td>' + helpers.formatCellData(participant.id) + '</td>' +
-			'<td>' + helpers.formatCellData(participant.name) + '</td>' +
-			'<td>' + helpers.formatCellData(participant.userId) + '</td>' +
-			'<td>' + helpers.formatCellData(participant.connectedTime, 'date') + '</td>' +
-			'<td>' + helpers.formatCellData(participant.endTime, 'date') + '</td>' +
-			'<td>' + helpers.formatCellData(participant.queueId) + '</td>' +
-			'<td>' + helpers.formatCellData(participant.purpose) + '</td>' +
-			'<td>' + helpers.formatCellData(participant.address) + '</td>' +
-			'<td>' + helpers.formatCellData(wrapup) + '</td>';
-	},
-	isConversationDisconnected: function(conversation) {
-	 	try {
-	 		// Check to see if there are any that aren't disconnected
-			var hasConnected = false;
-	 		$.each(conversation.participants, function(index, participant) {
-	 			if (!helpers.isParticipantDisconnected(participant))
-	 				hasConnected = true;
-	 		});
-	 		return !hasConnected;
-	 	} catch(error) {
-	 		console.error(error);
-	 		return false;
-	 	}
-	},
-	isWrapupComplete: function(conversation) {
-		var awaitingWrapup = false;
-		$.each(conversation.participants, function(index, participant) {
-			if (participant.wrapupRequired == true && !participant.wrapup)
-				awaitingWrapup = true;
-		});
-
-		return !awaitingWrapup;
-	},
-	isParticipantDisconnected: function(participant) {
-		if (!(helpers.areAllInteractionsDisconnected(participant.calls) &&
-			helpers.areAllInteractionsDisconnected(participant.callbacks) &&
-			helpers.areAllInteractionsDisconnected(participant.chats) &&
-			helpers.areAllInteractionsDisconnected(participant.cobrowse) &&
-			helpers.areAllInteractionsDisconnected(participant.emails) &&
-			helpers.areAllInteractionsDisconnected(participant.socialExpressions) &&
-			helpers.areAllInteractionsDisconnected(participant.videos))) {
-			//console.debug('participant ' + participant.name + ' is connected');
-			return false;
-		}
-		//console.debug('participant ' + participant.name + ' is disconnected');
-		return true;
-	},
-	areAllInteractionsDisconnected: function(interactionsList) {
-		if (!interactionsList) return true;
-
-		var hasConnected = false;
-		$.each(interactionsList, function(index, interaction) {
-			//console.debug('state: ' + interaction.state)
-			if (interaction.state.toLowerCase() != 'disconnected') {
-				//console.debug('Interaction not disconnected')
-				hasConnected = true;
-			}
-		});
-
-		return !hasConnected;
-	},
-	isParticipantConnected: function(participant) {
-		if (helpers.areAnyInteractionsConnected(participant.calls) ||
-			helpers.areAnyInteractionsConnected(participant.callbacks) ||
-			helpers.areAnyInteractionsConnected(participant.chats) ||
-			helpers.areAnyInteractionsConnected(participant.cobrowse) ||
-			helpers.areAnyInteractionsConnected(participant.emails) ||
-			helpers.areAnyInteractionsConnected(participant.socialExpressions) ||
-			helpers.areAnyInteractionsConnected(participant.videos)) {
-			return true;
-		}
-		return false;
-	},
-	areAnyInteractionsConnected: function(interactionsList) {
-		if (!interactionsList) return false;
-
-		var hasConnected = false;
-		$.each(interactionsList, function(index, interaction) {
-			if (interaction.state.toLowerCase() == 'connected') {
-				hasConnected = true;
-			}
-		});
-
-		return hasConnected;
 	},
 	formatCellData: function(data, type) {
 		if (!data) return '';
@@ -140,12 +48,3 @@ var helpers = {
 		}
 	}
 };
-
-
-
-
-
-
-
-
-
