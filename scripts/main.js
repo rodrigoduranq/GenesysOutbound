@@ -1,40 +1,10 @@
 var pureCloudSession;
 var usersApi;
 var routingApi;
-var notificationsApi;
-
-const TOPIC_CONVERSATIONS = 'v2.routing.queues.{id}.conversations';
-const TOPIC_CONVERSATIONS_REGEX = /v2\.routing\.queues\.([a-z0-9\-]{36})\.conversations/;
+var outboundApi;
 
 var _me = {};
-var _channelId;
 var _queues = [];
-
-
-
-/*
-let apiInstance = new platformClient.OutboundApi();
-
-let opts = {
-  'pageSize': 25, // Number | Page size. The max that will be returned is 100.
-  'pageNumber': 1, // Number | Page number
-  'sortBy': "", // String | Sort by
-  'sortOrder': "ascending" // String | Sort order
-};
-
-apiInstance.getOutboundCampaigns(opts)
-  .then((data) => {
-    console.log(`getOutboundCampaigns success! data: ${JSON.stringify(data, null, 2)}`);
-  })
-  .catch((err) => {
-    console.log('There was a failure calling getOutboundCampaigns');
-    console.error(err);
-  });
-
-*/
-
-
-
 
 
 $(document).ready(function() {
@@ -57,7 +27,8 @@ $(document).ready(function() {
 			// Initialize API instances
 			usersApi = new purecloud.platform.UsersApi(pureCloudSession);
 			routingApi = new purecloud.platform.RoutingApi(pureCloudSession);
-			notificationsApi = new purecloud.platform.NotificationsApi(pureCloudSession);
+			outboundApi = new purecloud.platform.OutboundApi(pureCloudSession);
+
 
 			// Get the user's data (to verify token) and return the promise
 			return usersApi.getMe();
@@ -131,3 +102,25 @@ function getQueuesImpl(queuesList, pageSize, pageNumber, sortBy, name, active, f
 				reject(error);
 			});
 }
+
+
+/*
+let apiInstance = new platformClient.OutboundApi();
+
+let opts = {
+  'pageSize': 25, // Number | Page size. The max that will be returned is 100.
+  'pageNumber': 1, // Number | Page number
+  'sortBy': "", // String | Sort by
+  'sortOrder': "ascending" // String | Sort order
+};
+
+apiInstance.getOutboundCampaigns(opts)
+  .then((data) => {
+    console.log(`getOutboundCampaigns success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getOutboundCampaigns');
+    console.error(err);
+  });
+
+*/
