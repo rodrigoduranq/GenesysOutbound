@@ -16,7 +16,7 @@ var _queues = [];
 /*
 let apiInstance = new platformClient.OutboundApi();
 
-let opts = { 
+let opts = {
   'pageSize': 25, // Number | Page size. The max that will be returned is 100.
   'pageNumber': 1, // Number | Page number
   'sortBy': "", // String | Sort by
@@ -65,7 +65,7 @@ $(document).ready(function() {
 		})
 		.then(function(getMeResult) {
 			console.log(getMeResult);
-
+      console.log ("Hello World");
 			// Store the "me" object
 			_me = getMeResult;
 
@@ -89,7 +89,7 @@ $(document).ready(function() {
 
 // Get the list of queues. Returns a promise
 function getQueues(pageSize = 100, pageNumber = 1, sortBy, name, active) {
-	return new Promise(function(fulfill, reject) { 
+	return new Promise(function(fulfill, reject) {
 		getQueuesImpl([], pageSize, pageNumber, sortBy, name, active, fulfill, reject);
 	});
 }
@@ -209,7 +209,7 @@ function toggleQueueSubscription(queueId) {
 
 function handleNotification(message) {
 	try {
-		// Make sure there is data in the message 
+		// Make sure there is data in the message
 		// (data should never be empty, but prevent parse error)
 		if (!message.data) {
 			console.warn('Message recieved, but there was no data!');
@@ -256,19 +256,19 @@ function addOrUpdateConversation(queueId, conversation) {
 
 	var participantsHtml = '';
 	$.each(conversation.participants, function(index, participant) {
-		var participantClass = helpers.isParticipantDisconnected(participant) ? 
-			'danger' : 
+		var participantClass = helpers.isParticipantDisconnected(participant) ?
+			'danger' :
 			helpers.isParticipantConnected(participant) ?
 				'success' :
 				'';
 		participantsHtml += '<tr class="' + participantClass + '">';
 		if (index == 0) {
-			participantsHtml += 
-				'<td rowspan="' + participantCount + '">' + 
-					'<span id="id-' + conversation.id + '">'+ conversation.id +'</span>' + 
+			participantsHtml +=
+				'<td rowspan="' + participantCount + '">' +
+					'<span id="id-' + conversation.id + '">'+ conversation.id +'</span>' +
 					'<button class="clipbutton" data-clipboard-target="#id-' + conversation.id + '">' +
 		    			'<i class="fa fa-files-o" aria-hidden="true"></i>' +
-					'</button>' + 
+					'</button>' +
 				'</td>';
 		}
 		participantsHtml += helpers.generateParticipantDataCells(participant);
@@ -282,7 +282,7 @@ function addOrUpdateConversation(queueId, conversation) {
 		$('#conversationsTable').append('<tbody id="' + conversation.id + '-data">' + participantsHtml + '</tbody>');
 	}
 
-	if (helpers.isConversationDisconnected(conversation) && 
+	if (helpers.isConversationDisconnected(conversation) &&
 		helpers.isWrapupComplete(conversation)) {
 		// Everyone is disconnected and wrapup has been provided (or was not required)
 		// Remove conversation from UI in 10 seconds
@@ -293,16 +293,3 @@ function addOrUpdateConversation(queueId, conversation) {
 		}, 10 * 1000);
 	}
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
