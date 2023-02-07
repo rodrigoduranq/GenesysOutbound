@@ -30,7 +30,7 @@ $(document).ready(function() {
 			routingApi = new purecloud.platform.RoutingApi(pureCloudSession);
 			outboundApi = new purecloud.platform.OutboundApi(pureCloudSession);
 
-
+     prueba();
 			// Get the user's data (to verify token) and return the promise
 			return usersApi.getMe();
 		})
@@ -158,8 +158,27 @@ function getCampasImpl(campasList, pageSize, pageNumber, sortBy, name, active, f
 
 
 
+function prueba () {
+
+	let opts = {
+	  'pageSize': 25, // Number | Page size. The max that will be returned is 100.
+	  'pageNumber': 1, // Number | Page number
+	  'sortBy': "", // String | Sort by
+	  'sortOrder': "ascending" // String | Sort order
+	};
+
+	outboundApi.getOutboundCampaigns(opts)
+	  .then((data) => {
+	    console.log(`getOutboundCampaigns success! data: ${JSON.stringify(data, null, 2)}`);
+	  })
+	  .catch((err) => {
+	    console.log('There was a failure calling getOutboundCampaigns');
+	    console.error(err);
+	  });
 
 
+
+}
 /*
 let apiInstance = new platformClient.OutboundApi();
 
