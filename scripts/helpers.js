@@ -12,11 +12,20 @@ var helpers = {
 		$.each(queueList, function(index, queue) {
 			var tableRow = '<tr id="' + queue.id + '">' +
 					'<td>' + queue.name + '</td>' +
-					'<td><button id="' + queue.id + '-button" class="queueButton btn btn-default" onclick="">MOSTRAR</button></td>' +   /// AGARRAR REFERENCIA DE LAS COLAS PARA ONCLICK
+					'<td><button id="' + queue.id + '-button" class="elButton btn btn-default" onclick="">MOSTRAR</button></td>' +   /// AGARRAR REFERENCIA DE LAS COLAS PARA ONCLICK
 				'</tr>';
 			$('#queuesTableBody').append(tableRow);
 		})
-	}
+	},
+	displayCampaList: function(campaList) {
+		$.each(campaList, function(index, campa) {
+			var tableRow = '<tr id="' + campa.id + '">' +
+					'<td>' + campa.name + '</td>' +
+					'<td><button id="' + campa.id + '-button" class="elButton btn btn-default" onclick="">MOSTRAR</button></td>' +   /// AGARRAR REFERENCIA DE LAS COLAS PARA ONCLICK
+				'</tr>';
+			$('#campaTableBody').append(tableRow);
+		})
+	},
 };
 
 

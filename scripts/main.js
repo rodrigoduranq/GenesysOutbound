@@ -5,6 +5,7 @@ var outboundApi;
 
 var _me = {};
 var _queues = [];
+var _campas = [];
 
 
 $(document).ready(function() {
@@ -40,11 +41,11 @@ $(document).ready(function() {
 			_me = getMeResult;
 
 			// Get list of queues (function wraps API calls)
-			return getQueues();
+			return getCampas();
 		})
-		.then(function(queuesList) {
+		.then(function(campasList) {
 			// Save result
-			_queues = queuesList;
+			_campas = campasList;
 
 			// Add to UI
 			helpers.displayQueuesList(_queues);
@@ -106,6 +107,53 @@ function getQueuesImpl(queuesList, pageSize, pageNumber, sortBy, name, active, f
 
 
 
+
+
+// Get the list of campas. Returns a promise
+function getCampas(pageSize = 100, pageNumber = 1, sortBy, name, active) {
+	return new Promise(function(fulfill, reject) {
+		getCampasImpl([], pageSize, pageNumber, sortBy, name, active, fulfill, reject);
+	});
+}
+
+// Implementation of get queues to recursively get all queues and fulfill the promise when done
+function getCampasImpl(queuesList, pageSize, pageNumber, sortBy, name, active, fulfill, reject) {
+
+  console.log('En getCampaImpl ');
+
+	outboundApi.getOutboundCampaigns(pageSize, pageNumber, sortBy, name, active)
+			.then(function(getCampasResponse) {
+				try {
+					// Append to list
+					$.each(getCampasResponse.entities, function(index, queue) {
+						campasList.push(campaign);
+					});
+
+					if (getCampasResponse.nextUri) {
+						// Recurse
+						console.log('Getting more queues from page ' + (getCampasResponse.pageNumber + 1));
+						getQueuesImpl(queuesList,
+							getCampasResponse.pageSize,
+							getCampasResponse.pageNumber + 1,
+							sortBy,
+							name,
+							active,
+							fulfill,
+							reject);
+					} else {
+						// Fulfill promise
+						fulfill(campasList);
+					}
+				} catch (error) {
+					console.log(error);
+					reject(error);
+				}
+			})
+			.catch(function(error){
+				console.log(error);
+				reject(error);
+			});
+}
 
 
 
