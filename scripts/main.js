@@ -117,9 +117,9 @@ function getCampas(pageSize = 100, pageNumber = 1, sortBy, name, active) {
 }
 
 // Implementation of get queues to recursively get all queues and fulfill the promise when done
-function getCampasImpl(queuesList, pageSize, pageNumber, sortBy, name, active, fulfill, reject) {
+function getCampasImpl(campasList, pageSize, pageNumber, sortBy, name, active, fulfill, reject) {
 
-  console.log('En getCampaImpl ');
+  console.log('v2 En getCampasImpl ');
 
 	outboundApi.getOutboundCampaigns(pageSize, pageNumber, sortBy, name, active)
 			.then(function(getCampasResponse) {
