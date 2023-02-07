@@ -28,9 +28,9 @@ $(document).ready(function() {
 			// Initialize API instances
 			usersApi = new purecloud.platform.UsersApi(pureCloudSession);
 			routingApi = new purecloud.platform.RoutingApi(pureCloudSession);
-//			outboundApi = new purecloud.platform.OutboundApi(pureCloudSession);
+			outboundApi = new purecloud.platform.OutboundApi(pureCloudSession);
 
-let apiInstance = new pureCloudSession.OutboundApi();
+//let apiInstance = new pureCloudSession.OutboundApi();
 
      prueba();
 			// Get the user's data (to verify token) and return the promise
