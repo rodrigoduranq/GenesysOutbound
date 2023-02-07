@@ -6,7 +6,7 @@ var outboundApi;
 var _me = {};
 var _queues = [];
 var _campas = [];
-
+var apiInstance;
 
 $(document).ready(function() {
 	// Create PC session
@@ -28,7 +28,9 @@ $(document).ready(function() {
 			// Initialize API instances
 			usersApi = new purecloud.platform.UsersApi(pureCloudSession);
 			routingApi = new purecloud.platform.RoutingApi(pureCloudSession);
-			outboundApi = new purecloud.platform.OutbondApi(pureCloudSession);
+			outboundApi = new purecloud.platform.OutboundApi(pureCloudSession);
+
+let apiInstance = new pureCloudSession.OutboundApi();
 
      prueba();
 			// Get the user's data (to verify token) and return the promise
@@ -167,7 +169,7 @@ function prueba () {
 	  'sortOrder': "ascending" // String | Sort order
 	};
 
-	outboundApi.getOutboundCampaigns(opts)
+	apiInstance.getOutboundCampaigns(opts)
 	  .then((data) => {
 	    console.log(`getOutboundCampaigns success! data: ${JSON.stringify(data, null, 2)}`);
 	  })
