@@ -47,7 +47,7 @@ $(document).ready(function() {
 		})
 		.then(function(queuesList) {
 			// Save result
-			_queus = queuesList;
+			_queues = queuesList;
 
 			// Add to UI
 			helpers.displayQueuesList(_queues);
