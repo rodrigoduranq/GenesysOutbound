@@ -32,7 +32,7 @@ $(document).ready(function() {
 
 //let apiInstance = new pureCloudSession.OutboundApi();
 
-     prueba();
+  //   prueba();
 			// Get the user's data (to verify token) and return the promise
 			return usersApi.getMe();
 		})
