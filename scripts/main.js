@@ -43,11 +43,11 @@ $(document).ready(function() {
 			_me = getMeResult;
 
 			// Get list of queues (function wraps API calls)
-			return getCampas();
+			return getQueues();
 		})
-		.then(function(campasList) {
+		.then(function(queuesList) {
 			// Save result
-			_campas = campasList;
+			_queus = queuesList;
 
 			// Add to UI
 			helpers.displayQueuesList(_queues);
