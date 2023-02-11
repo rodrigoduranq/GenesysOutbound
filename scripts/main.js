@@ -43,7 +43,7 @@ $(document).ready(function() {
 
 
 
-
+/*
 
 	// Log debug info to the console
 	//pureCloudSession.debugLog = console.log;
@@ -289,3 +289,6 @@ function addOrUpdateConversation(queueId, conversation) {
 		}, 10 * 1000);
 	}
 }
+
+
+*/
