@@ -24,6 +24,7 @@ var apiInstance;
 	  });
 
 */
+	console.log("BREAKPOINT 1");
 
 pureCloudSession = purecloud.platform.PureCloudSession({
 	environment: 'mypurecloud.com',
@@ -50,7 +51,7 @@ pureCloudSession.login()
 })
 .then(function(getMeResult) {
 	console.log(getMeResult);
-	console.log("BREAKPOINT");
+	console.log("BREAKPOINT 2");
 
 	// Store the "me" object
 	_me = getMeResult;
