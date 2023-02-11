@@ -24,6 +24,10 @@ var apiInstance;
 	  });
 
 */
+
+$(document).ready(function()
+{
+
 	console.log("BREAKPOINT 1");
 
 pureCloudSession = purecloud.platform.PureCloudSession({
@@ -59,3 +63,6 @@ pureCloudSession.login()
 	// Get list of queues (function wraps API calls)
 //	return getQueues();
 })
+
+
+}
