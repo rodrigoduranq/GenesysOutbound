@@ -14,17 +14,15 @@ var _queues = [];
 
 
 
-const platformClient = require('platformClient');
-var client = platformClient.ApiClient.instance;
-client.loginImplicitGrant("60feb42b-6ef0-4761-ad7f-95ac491ee688", "window.location.href")
-  .then(function() {
-		console.log("FIRMADO");
-  })
-  .catch(function(err) {
-    // Handle failure response
-    console.log(err);
-  });
-
+const client = platformClient.ApiClient.instance;
+client.loginClientCredentialsGrant(clientId,clientSecret)
+.then(()=> {
+	console.log("FIRMADO");
+})
+.catch((err) => {
+ // Handle failure response
+ console.log(err);
+});
 
 
 /*
