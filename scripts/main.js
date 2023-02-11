@@ -20,7 +20,7 @@ $(document).ready(function() {
 	});
 
 	// Log debug info to the console
-	//pureCloudSession.debugLog = console.log;
+	pureCloudSession.debugLog = console.log;
 
 	// Get auth token
 	pureCloudSession.login()
@@ -42,9 +42,24 @@ $(document).ready(function() {
 			// Store the "me" object
 			_me = getMeResult;
 
+
+
+
+			outboundApi.getOutboundCampaigns().then(function(campaigns) {
+			   // Procesar la respuesta con la lista de campañas de salida
+			   console.log("Campañas de salida: ", campaigns);
+			}).catch(function(error) {
+			   // Manejar cualquier error
+			   console.error("Error al obtener campañas de salida: ", error);
+			});
+
+
+
+
+
 			// Get list of queues (function wraps API calls)
 //			return getQueues();
-			return getCampas();
+	//		return getCampas();
 		})
 		.then(function(queuesList) {
 			// Save result
