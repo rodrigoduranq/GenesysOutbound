@@ -13,7 +13,7 @@ var _queues = [];
 
 
 
-
+$(document).ready(function() {
 const client = platformClient.ApiClient.instance;
 client.loginClientCredentialsGrant(clientId,clientSecret)
 .then(()=> {
@@ -23,6 +23,7 @@ client.loginClientCredentialsGrant(clientId,clientSecret)
  // Handle failure response
  console.log(err);
 });
+}
 
 
 /*
