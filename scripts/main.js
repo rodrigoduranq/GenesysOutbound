@@ -18,18 +18,33 @@ $(document).ready(function() {
 
 	const client = platformClient.ApiClient.instance;
 	client.loginImplicitGrant('60feb42b-6ef0-4761-ad7f-95ac491ee688', window.location.href)
-	.then(() => {
-    // Make request to GET /api/v2/users/me?expand=presence
-    return usersApi.getUsersMe({ 'expand': ["presence"] });
-  })
-  .then((userMe) => {
-    // Handle successful result
-    console.log(`Hello, ${userMe.name}!`);
-  })
-  .catch((err) => {
-    // Handle failure response
-    console.log(err);
-  });
+	  .then((data) => {
+	    console.log(data);
+			console.log('PASO');
+			console.log('PASO');
+			console.log('PASO');
+
+
+			//use that session to interface with the API
+			var users = new platformClient.UsersApi();
+
+			console.log("getting ME");
+			users.getUsersMe().then(function(userObject){
+			    console.log("got me");
+			    console.log(userObject);
+			    console.log("done");
+			});
+
+
+
+
+	    // Do authenticated things
+	  })
+	  .catch((err) => {
+	    // Handle failure responseS
+	    console.log(err);
+	  });
+
 
 
 });
