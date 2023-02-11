@@ -15,24 +15,17 @@ var _queues = [];
 
 $(document).ready(function() {
 
-	// Create API instance
-	const usersApi = new platformClient.UsersApi();
-	
-	// Authenticate
-	client.loginImplicitGrant('60feb42b-6ef0-4761-ad7f-95ac491ee688', window.location.href)
-	  .then(() => {
-	    // Make request to GET /api/v2/users/me?expand=presence
-	    return usersApi.getUsersMe({ 'expand': ["presence"] });
-	  })
-	  .then((userMe) => {
-	    // Handle successful result
-	    console.log(`Hello, ${userMe.name}!`);
+
+	const client = platformClient.ApiClient.instance;
+	client.loginImplicitGrant('60feb42b-6ef0-4761-ad7f-95ac491ee688', window.location.href, { state: state })
+	  .then((data) => {
+	    console.log(data);
+	    // Do authenticated things
 	  })
 	  .catch((err) => {
 	    // Handle failure response
 	    console.log(err);
 	  });
-
 
 
 
