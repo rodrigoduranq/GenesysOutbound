@@ -8,6 +8,7 @@ var _queues = [];
 var _campas = [];
 var apiInstance;
 
+$(document).ready(function() {
 
 	const client = platformClient.ApiClient.instance;
 	client.loginImplicitGrant(clientId, redirectUri, { state: state })
@@ -20,5 +21,4 @@ var apiInstance;
 	    console.log(err);
 	  });
 
-
-*/
+};
