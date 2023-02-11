@@ -39,3 +39,22 @@ pureCloudSession = purecloud.platform.PureCloudSession({
 
 // Get auth token
 pureCloudSession.login()
+.then(function() {
+	// Initialize API instances
+	usersApi = new purecloud.platform.UsersApi(pureCloudSession);
+	routingApi = new purecloud.platform.RoutingApi(pureCloudSession);
+	notificationsApi = new purecloud.platform.NotificationsApi(pureCloudSession);
+
+	// Get the user's data (to verify token) and return the promise
+	return usersApi.getMe();
+})
+.then(function(getMeResult) {
+	console.log(getMeResult);
+	console.log("BREAKPOINT");
+
+	// Store the "me" object
+	_me = getMeResult;
+
+	// Get list of queues (function wraps API calls)
+//	return getQueues();
+})
