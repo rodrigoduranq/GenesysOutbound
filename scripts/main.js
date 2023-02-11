@@ -30,9 +30,14 @@ $(document).ready(function() {
 
 			console.log("getting ME");
 			users.getUsersMe().then(function(userObject){
+
+
+
 			    console.log("got me");
 			    console.log(userObject);
 			    console.log("done");
+					console.log(userObject.email);
+
 			});
 
 
