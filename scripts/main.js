@@ -8,9 +8,6 @@ var _queues = [];
 var _campas = [];
 var apiInstance;
 
-$(document).ready(function() {
-	// Create PC session
-
 
 	const client = platformClient.ApiClient.instance;
 	client.loginImplicitGrant(clientId, redirectUri, { state: state })
@@ -23,8 +20,5 @@ $(document).ready(function() {
 	    console.log(err);
 	  });
 
-
-
-  };
 
 */
