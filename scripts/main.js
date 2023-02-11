@@ -8,6 +8,7 @@ var _queues = [];
 var _campas = [];
 var apiInstance;
 
+  const platformClient = require('platformClient');
 
 	const client = platformClient.ApiClient.instance;
 	client.loginImplicitGrant(clientId, redirectUri, { state: state })
