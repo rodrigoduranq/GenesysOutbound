@@ -11,7 +11,7 @@ var apiInstance;
   const platformClient = require('platformClient');
 
 	const client = platformClient.ApiClient.instance;
-	client.loginImplicitGrant(clientId, redirectUri, { state: state })
+	client.loginImplicitGrant("60feb42b-6ef0-4761-ad7f-95ac491ee688", "window.location.href", { state: state })
 	  .then((data) => {
 	    console.log(data);
 	    // Do authenticated things
