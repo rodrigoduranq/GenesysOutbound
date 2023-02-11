@@ -11,6 +11,23 @@ var _webSocket;
 var _channelId;
 var _queues = [];
 
+
+
+
+const platformClient = require('platformClient');
+var client = platformClient.ApiClient.instance;
+client.loginImplicitGrant("60feb42b-6ef0-4761-ad7f-95ac491ee688", "window.location.href")
+  .then(function() {
+    // Do authenticated things
+  })
+  .catch(function(err) {
+    // Handle failure response
+    console.log(err);
+  });
+
+
+
+/*
 $(document).ready(function() {
 	// Create PC session
 	pureCloudSession = purecloud.platform.PureCloudSession({
@@ -21,6 +38,12 @@ $(document).ready(function() {
 		storageKey: 'queue-notifications-example-auth-token',
 		timeout: 10000
 	});
+
+*/
+
+
+
+
 
 	// Log debug info to the console
 	//pureCloudSession.debugLog = console.log;
