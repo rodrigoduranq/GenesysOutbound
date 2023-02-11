@@ -23,7 +23,7 @@ client.loginClientCredentialsGrant(clientId,clientSecret)
  // Handle failure response
  console.log(err);
 });
-}
+});
 
 
 /*
