@@ -43,7 +43,7 @@ $(document).ready(function() {
 					apiInstance.getOutboundCampaigns(opts)
 					  .then((data) => {
 
-					    console.log ("CHECKPONIT 1");
+					    console.log ("CHECKPONIT 1s");
 					    console.log (data.pageCount);
 					//    console.log(`getOutboundCampaigns success! data: ${JSON.stringify(data, null, 2)}`);
 
