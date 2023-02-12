@@ -38,6 +38,39 @@ $(document).ready(function() {
 			    console.log("done");
 					console.log(userObject.email);
 
+
+
+
+
+					let apiInstance = new platformClient.OutboundApi();
+
+					let opts = {
+					  'pageSize': 100, // Number | Page size. The max that will be returned is 100.
+					  'pageNumber': 1, // Number | Page number
+					};
+
+					apiInstance.getOutboundCampaigns(opts)
+					  .then((data) => {
+
+					    console.log ("VUELTA 1");
+					    console.log (data.pageCount);
+					//    console.log(`getOutboundCampaigns success! data: ${JSON.stringify(data, null, 2)}`);
+
+
+										$.each(data.entities, function(index, Campaign) {
+					              console.log (Campaign.name + "_____________________" + Campaign.contactList.name);
+					///              console.log (Campaign.contactList.name);
+
+					    });
+
+					  });
+					  
+
+
+
+
+
+
 			});
 
 
