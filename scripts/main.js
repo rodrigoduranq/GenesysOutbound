@@ -43,19 +43,28 @@ $(document).ready(function() {
 					apiInstance.getOutboundCampaigns(opts)
 					  .then((data) => {
 
-					    console.log ("CHECKPONIT X");
+					    console.log ("CHECKPONIT A");
 					    console.log (data.pageCount);
 					//    console.log(`getOutboundCampaigns success! data: ${JSON.stringify(data, null, 2)}`);
 
 
 										$.each(data.entities, function(index, Campaign) {
 					              console.log (Campaign.name + "_____________________" + Campaign.contactList.name);
+
+												var tableRow = '<tr id="' + Campaign.id + '">' +
+														'<td>' + Campaign.name + '</td>' +
+														'<td><button id="' + Campaign.id + '-button" class="elButton btn btn-default" onclick="">MOSTRAR</button></td>' +   /// AGARRAR REFERENCIA DE LAS COLAS PARA ONCLICK
+													'</tr>';
+
+
+
+
 					///              console.log (Campaign.contactList.name);
 
 					    });
-							console.log ("CHECKPONIT Y");
+							console.log ("CHECKPONIT B");
 
-							tableRow = "<tr><th>Nombre</th><th>Apellido</th><th>Edad al momento de la muerte</th></tr><tr><td>Frida</td><td>Kahlo</td><td>47</td></tr><tr><td>Diego</td><td>Rivera</td><td>70</td></tr><tr><td>Emiliano</td><td>Zapata</td><td>47</td></tr>";
+///							tableRow = "<tr><th>Nombre</th><th>Apellido</th><th>Edad al momento de la muerte</th></tr><tr><td>Frida</td><td>Kahlo</td><td>47</td></tr><tr><td>Diego</td><td>Rivera</td><td>70</td></tr><tr><td>Emiliano</td><td>Zapata</td><td>47</td></tr>";
 
 
 						 $('#queuesTableBody').append(tableRow);
