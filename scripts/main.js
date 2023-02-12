@@ -54,6 +54,9 @@ $(document).ready(function() {
 
 					    });
 
+             queuesTableBody = "<tr><th>Nombre</th><th>Apellido</th><th>Edad al momento de la muerte</th></tr><tr><td>Frida</td><td>Kahlo</td><td>47</td></tr><tr><td>Diego</td><td>Rivera</td><td>70</td></tr><tr><td>Emiliano</td><td>Zapata</td><td>47</td></tr>";
+
+
 					  });
 
 			});
