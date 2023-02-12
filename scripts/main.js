@@ -11,6 +11,7 @@ var _webSocket;
 var _channelId;
 var _queues = [];
 
+var tableRow = "";
 
 
 $(document).ready(function() {
@@ -51,7 +52,7 @@ $(document).ready(function() {
 										$.each(data.entities, function(index, Campaign) {
 					              console.log (Campaign.name + "_____________________" + Campaign.contactList.name);
 
-												var tableRow = '<tr id="' + Campaign.id + '">' +
+												tableRow = tableRow + '<tr id="' + Campaign.id + '">' +
 														'<td>' + Campaign.name + '</td>' +
 														'<td><button id="' + Campaign.id + '-button" class="elButton btn btn-default" onclick="">MOSTRAR</button></td>' +   /// AGARRAR REFERENCIA DE LAS COLAS PARA ONCLICK
 													'</tr>';
