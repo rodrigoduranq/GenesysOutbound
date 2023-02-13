@@ -2,6 +2,7 @@ var usersApi;
 var _me = {};
 var tableRow = "";
 
+const platformClient = require('platformClient');
 
 $(document).ready(function() {
 	const client = platformClient.ApiClient.instance;
