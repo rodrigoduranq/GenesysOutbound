@@ -1,7 +1,6 @@
 var usersApi;
 var _me = {};
 var tableRow = "";
-var apiInstance;
 
 const platformClient = require('platformClient');
 
@@ -13,7 +12,8 @@ function updateRight(NombreCampana) {
     'name': NombreCampana, // String | Name
 	};
 
- apiInstance.getOutboundCampaigns(opts)
+  let apiInstance = new platformClient.OutboundApi();
+  apiInstance.getOutboundCampaigns(opts)
 
 
 
