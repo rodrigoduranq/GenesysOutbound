@@ -63,11 +63,14 @@ html, body, div, span, p {
 
 
 	      .left {
-	        width: 30%;
+					width: 20%;
+	        height: 100%;
 	        float: left;
+	        overflow: auto;
 	      }
 
 	      .right {
-	        width: 70%;
-	        float: right;
+					width: 80%;
+	        height: 100%;
+	        float: left;
 	      }
