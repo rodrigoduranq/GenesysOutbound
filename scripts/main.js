@@ -4,6 +4,12 @@ var tableRow = "";
 
 const platformClient = require('platformClient');
 
+function updateRight(content) {
+	 document.getElementById("right").innerHTML = content;
+}
+
+
+
 $(document).ready(function() {
 	const client = platformClient.ApiClient.instance;
 	client.loginImplicitGrant('60feb42b-6ef0-4761-ad7f-95ac491ee688', window.location.href)
@@ -29,7 +35,7 @@ $(document).ready(function() {
 					apiInstance.getOutboundCampaigns(opts)
 					  .then((data) => {
 
-					    console.log ("aaaaaaaaa A");
+					    console.log ("bbbbbbb bbb");
 					    console.log (data.pageCount);
 
 										$.each(data.entities, function(index, Campaign) {
