@@ -53,8 +53,8 @@ $(document).ready(function() {
 					              console.log (Campaign.name + "_____________________" + Campaign.contactList.name);
 
 												tableRow = tableRow + '<tr id="' + Campaign.id + '">' +
-														'<td>' + Campaign.name + '<p>' + Campaign.contactList.name +      '</td>' +
-														'<td><button id="' + Campaign.id + '-button" class="elButton btn btn-default" onclick="">MOSTRAR</button></td>' +   /// AGARRAR REFERENCIA DE LAS COLAS PARA ONCLICK
+														'<td><b>' + Campaign.name + '</b><p>' + Campaign.contactList.name + '</td>' +
+														'<td><button id="' + Campaign.id + '-button" class="elButton btn btn-default" onclick="updateRight('NUEVO')">MOSTRAR</button></td>' +   /// AGARRAR REFERENCIA DE LAS COLAS PARA ONCLICK
 													'</tr>';
 
 
