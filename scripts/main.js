@@ -54,7 +54,7 @@ $(document).ready(function() {
 
 												tableRow = tableRow + '<tr id="' + Campaign.id + '">' +
 														'<td><b>' + Campaign.name + '</b><p>' + Campaign.contactList.name + '</td>' +
-														'<td><button id="' + Campaign.id + '-button" class="elButton btn btn-default" onclick="updateRight(\''NUEVO'\')">MOSTRAR</button></td>' +   /// AGARRAR REFERENCIA DE LAS COLAS PARA ONCLICK
+														'<td><button id="' + Campaign.id + '-button" class="elButton btn btn-default" onclick="updateRight(\'ABC\')">MOSTRAR</button></td>' +   /// AGARRAR REFERENCIA DE LAS COLAS PARA ONCLICK
 													'</tr>';
 
 
