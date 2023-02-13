@@ -14,11 +14,17 @@ function updateRight(NombreCampana) {
 
   let apiInstance = new platformClient.OutboundApi();
   apiInstance.getOutboundCampaigns(opts)
+	.then((data) => {
 
-  ch = '<center>' + NombreCampana + '</center>'
+			console.log (data);
+
+			 ch = '<center><b>' + NombreCampana + '<b></center>'
+       document.getElementById("right").innerHTML = ch;
 
 
-	 document.getElementById("right").innerHTML = ch;
+
+  })
+
 }
 
 
