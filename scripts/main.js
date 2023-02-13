@@ -29,7 +29,7 @@ $(document).ready(function() {
 					apiInstance.getOutboundCampaigns(opts)
 					  .then((data) => {
 
-					    console.log ("CHECKPONIT A");
+					    console.log ("aaaaaaaaa A");
 					    console.log (data.pageCount);
 
 										$.each(data.entities, function(index, Campaign) {
