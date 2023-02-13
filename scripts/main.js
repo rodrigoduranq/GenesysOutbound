@@ -16,15 +16,12 @@ function updateRight(NombreCampana) {
   apiInstance.getOutboundCampaigns(opts)
 	.then((data) => {
 
-			console.log (data);
+			console.log (data.entities[0]);
 
 			 ch = '<center><b>' + NombreCampana + '<b></center>'
        document.getElementById("right").innerHTML = ch;
 
-
-
   })
-
 }
 
 
