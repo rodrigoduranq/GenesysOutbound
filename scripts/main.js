@@ -1,11 +1,23 @@
 var usersApi;
 var _me = {};
 var tableRow = "";
+var apiInstance;
 
 const platformClient = require('platformClient');
 
-function updateRight(content) {
-	 document.getElementById("right").innerHTML = content;
+function updateRight(NombreCampana) {
+
+	let opts = {
+		'pageSize': 100, // Number | Page size. The max that will be returned is 100.
+		'pageNumber': 1, // Number | Page number
+    'name': NombreCampana, // String | Name
+	};
+
+ apiInstance.getOutboundCampaigns(opts)
+
+
+
+	 document.getElementById("right").innerHTML = NombreCampana;
 }
 
 
@@ -32,7 +44,7 @@ $(document).ready(function() {
 					};
 
 // FALTARIA CICLAR
-					apiInstance.getOutboundCampaigns(opts)
+ 					 apiInstance.getOutboundCampaigns(opts)
 					  .then((data) => {
 
 					    console.log ("bbbbbbb bbb");
@@ -43,12 +55,12 @@ $(document).ready(function() {
 
 												tableRow = tableRow + '<tr id="' + Campaign.id + '">' +
 														'<td><b>' + Campaign.name + '</b><p>' + Campaign.contactList.name + '</td>' +
-														'<td><button id="' + Campaign.id + '-button" class="elButton btn btn-default" onclick="updateRight(\'' + Campaign.id + '\')">MOSTRAR</button></td>' +   /// AGARRAR REFERENCIA DE LAS COLAS PARA ONCLICK
+														'<td><button id="' + Campaign.id + '-button" class="elButton btn btn-default" onclick="updateRight(\'' + Campaign.name + '\')">MOSTRAR</button></td>' +   /// AGARRAR REFERENCIA DE LAS COLAS PARA ONCLICK
 													'</tr>';
 					    });
 							console.log ("CHECKPONIT B");
 
-						 $('#queuesTableBody').append(tableRow);
+						 $('#Campanas').append(tableRow);
 					  });
 			});
 
