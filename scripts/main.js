@@ -19,7 +19,7 @@ function updateRight(NombreCampana) {
       Campaign = data.entities[0];
 	//		console.log (data.entities[0]);
 
-			 ch = '<center><b>   Nombre de La Campaña' + Campaign.name   + '<b></center>'
+			 ch = '<center><b>   Nombre de La Campaña' + Campaign.name   + '<b></center><p>'
 			 ch = ch + '<center><b>   Nombre de La Calling List' + Campaign.contactList.name  + '<b></center>'
 
        document.getElementById("right").innerHTML = ch;
