@@ -16,9 +16,10 @@ function updateRight(NombreCampana) {
   apiInstance.getOutboundCampaigns(opts)
 	.then((data) => {
 
-			console.log (data.entities[0]);
+      Campaign = data.entities[0];
+	//		console.log (data.entities[0]);
 
-			 ch = '<center><b>   Nombre de La Campaña' + NombreCampana + '<b></center>'
+			 ch = '<center><b>   Nombre de La Campaña' + Campaign.name + Campaign.contactList.name  + '<b></center>'
        document.getElementById("right").innerHTML = ch;
 
   })
