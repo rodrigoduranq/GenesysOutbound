@@ -1,19 +1,9 @@
-var pureCloudSession;
 var usersApi;
-var routingApi;
-var notificationsApi;
-
 var _me = {};
-var _webSocket;
-var _channelId;
-var _queues = [];
-
 var tableRow = "";
 
 
 $(document).ready(function() {
-
-
 	const client = platformClient.ApiClient.instance;
 	client.loginImplicitGrant('60feb42b-6ef0-4761-ad7f-95ac491ee688', window.location.href)
 	  .then((data) => {
@@ -22,14 +12,10 @@ $(document).ready(function() {
 			//use that session to interface with the API
 			var users = new platformClient.UsersApi();
 
-			console.log("getting ME");
 			users.getUsersMe().then(function(userObject){
 
 			    console.log("got me");
 			    console.log(userObject);
-			    console.log("done");
-					console.log(userObject.email);
-
 
 					let apiInstance = new platformClient.OutboundApi();
 
@@ -38,13 +24,12 @@ $(document).ready(function() {
 					  'pageNumber': 1, // Number | Page number
 					};
 
+// FALTARIA CICLAR
 					apiInstance.getOutboundCampaigns(opts)
 					  .then((data) => {
 
 					    console.log ("CHECKPONIT A");
 					    console.log (data.pageCount);
-					//    console.log(`getOutboundCampaigns success! data: ${JSON.stringify(data, null, 2)}`);
-
 
 										$.each(data.entities, function(index, Campaign) {
 					              console.log (Campaign.name + "_____________________" + Campaign.contactList.name);
@@ -53,26 +38,12 @@ $(document).ready(function() {
 														'<td><b>' + Campaign.name + '</b><p>' + Campaign.contactList.name + '</td>' +
 														'<td><button id="' + Campaign.id + '-button" class="elButton btn btn-default" onclick="updateRight(\'' + Campaign.id + '\')">MOSTRAR</button></td>' +   /// AGARRAR REFERENCIA DE LAS COLAS PARA ONCLICK
 													'</tr>';
-
-
-
-
-					///              console.log (Campaign.contactList.name);
-
 					    });
 							console.log ("CHECKPONIT B");
 
-///							tableRow = "<tr><th>Nombre</th><th>Apellido</th><th>Edad al momento de la muerte</th></tr><tr><td>Frida</td><td>Kahlo</td><td>47</td></tr><tr><td>Diego</td><td>Rivera</td><td>70</td></tr><tr><td>Emiliano</td><td>Zapata</td><td>47</td></tr>";
-
-
 						 $('#queuesTableBody').append(tableRow);
-
-
 					  });
-
 			});
-
-
 
 
 	    // Do authenticated things
@@ -81,7 +52,5 @@ $(document).ready(function() {
 	    // Handle failure responseS
 	    console.log(err);
 	  });
-
-
 
 });
