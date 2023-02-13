@@ -11,12 +11,6 @@ var _queues = [];
 var tableRow = "";
 
 
-function updateRight(content) {
-	document.getElementById("right").innerHTML = 'Campaña "' + content;
-}
-
-
-
 $(document).ready(function() {
 
 
