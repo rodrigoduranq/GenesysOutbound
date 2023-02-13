@@ -3,15 +3,18 @@ var usersApi;
 var routingApi;
 var notificationsApi;
 
-const TOPIC_CONVERSATIONS = 'v2.routing.queues.{id}.conversations';
-const TOPIC_CONVERSATIONS_REGEX = /v2\.routing\.queues\.([a-z0-9\-]{36})\.conversations/;
-
 var _me = {};
 var _webSocket;
 var _channelId;
 var _queues = [];
 
 var tableRow = "";
+
+
+function updateRight(content) {
+	document.getElementById("right").innerHTML = 'Campaña "' + content;
+}
+
 
 
 $(document).ready(function() {
@@ -54,7 +57,7 @@ $(document).ready(function() {
 
 												tableRow = tableRow + '<tr id="' + Campaign.id + '">' +
 														'<td><b>' + Campaign.name + '</b><p>' + Campaign.contactList.name + '</td>' +
-														'<td><button id="' + Campaign.id + '-button" class="elButton btn btn-default" onclick="updateRight(\'ABC\')">MOSTRAR</button></td>' +   /// AGARRAR REFERENCIA DE LAS COLAS PARA ONCLICK
+														'<td><button id="' + Campaign.id + '-button" class="elButton btn btn-default" onclick="updateRight(\'' + Campaign.id + '\')">MOSTRAR</button></td>' +   /// AGARRAR REFERENCIA DE LAS COLAS PARA ONCLICK
 													'</tr>';
 
 
