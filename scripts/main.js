@@ -40,7 +40,9 @@ apiInstance.postOutboundContactlistExport(contactListId)
     console.error(err);
   });
 
-
+	setTimeout(function() {
+	      console.log('Esperando 3 segs');
+	}, 3000)
 
 apiInstance.getOutboundContactlistExport(contactListId, opts)
   .then((data) => {
