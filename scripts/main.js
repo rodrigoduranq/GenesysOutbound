@@ -31,6 +31,17 @@ let opts = {
   'download': "false" // String | Redirect to download uri
 };
 
+apiInstance.postOutboundContactlistExport(contactListId)
+  .then((data) => {
+    console.log(`postOutboundContactlistExport success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling postOutboundContactlistExport');
+    console.error(err);
+  });
+
+
+
 apiInstance.getOutboundContactlistExport(contactListId, opts)
   .then((data) => {
     console.log(`getOutboundContactlistExport success! data: ${JSON.stringify(data, null, 2)}`);
