@@ -73,8 +73,8 @@ apiInstance.postOutboundContactlistExport(contactListId)
 	.then((data) => {
 	    console.log(`getOutboundContactlistExport success! data: ${JSON.stringify(data, null, 2)}`);
 
-			readcsv(data.uri);
-			
+			readCSV(data.uri);
+
 	  })
 	  .catch((err) => {
 	    console.log('There was a failure calling getOutboundContactlistExport');
