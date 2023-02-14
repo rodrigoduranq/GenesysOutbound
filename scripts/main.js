@@ -5,7 +5,7 @@ var tableRow = "";
 const platformClient = require('platformClient');
 
 /////////////////////////////////////////////////
-const requestp = require('request-promise');
+//const requestp = require('request-promise');
 //const platformClient = require('purecloud-platform-client-v2');
 //const client = platformClient.ApiClient.instance;
 //client.setEnvironment('Given environment');
