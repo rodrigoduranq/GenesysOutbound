@@ -4,6 +4,35 @@ var tableRow = "";
 
 const platformClient = require('platformClient');
 
+function readCSV(url) {
+	var req = new XMLHttpRequest();
+	req.open("GET", url, true);
+	req.send();
+
+	req.onreadystatechange = function() {
+		if (req.readyState === 4 && req.status === 200) {
+			var lines = req.responseText.split("\n");
+
+			var table = "<table>";
+			for (var i = 0; i < lines.length; i++) {
+				var cells = lines[i].split(",");
+
+				table += "<tr>";
+				for (var j = 0; j < cells.length; j++) {
+					table += "<td>" + cells[j] + "</td>";
+				}
+				table += "</tr>";
+			}
+			table += "</table>";
+
+			document.getElementById("output").innerHTML = table;
+		}
+	};
+}
+
+
+
+
 function updateRight(NombreCampana) {
 
 	let opts = {
@@ -43,6 +72,9 @@ apiInstance.postOutboundContactlistExport(contactListId)
 	apiInstance.getOutboundContactlistExport(contactListId, opts)
 	.then((data) => {
 	    console.log(`getOutboundContactlistExport success! data: ${JSON.stringify(data, null, 2)}`);
+
+			readcsv(data.uri);
+			
 	  })
 	  .catch((err) => {
 	    console.log('There was a failure calling getOutboundContactlistExport');
