@@ -60,8 +60,6 @@ function updateRight(NombreCampana) {
 			 ch = ch + '<center><b>   Nombre de La Calling List: </b>' + Campaign.contactList.name  + '</center>'
 			 ch = ch + '<center><b>   Calling List Id: </b>' + Campaign.contactList.id  + '</center>'
 
-/*
-/////////////////////
 
 let contactListId = Campaign.contactList.id; // String | ContactList ID
 let opts = {
@@ -77,6 +75,7 @@ let opts = {
     console.error(err);
   });
 
+/*
 	apiInstance.getOutboundContactlistExport(contactListId, opts)
 	.then((data) => {
 	    console.log(`getOutboundContactlistExport success! data: ${JSON.stringify(data, null, 2)}`);
