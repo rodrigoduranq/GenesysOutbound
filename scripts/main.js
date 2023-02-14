@@ -21,6 +21,27 @@ function updateRight(NombreCampana) {
 
 			 ch = '<center><b>   Nombre de La Campaña: </b>' + Campaign.name   + '</center><p>'
 			 ch = ch + '<center><b>   Nombre de La Calling List: </b>' + Campaign.contactList.name  + '</center>'
+			 ch = ch + '<center><b>   Calling List Id: </b>' + Campaign.contactList.id  + '</center>'
+
+
+/////////////////////
+
+let contactListId = Campaign.contactList.id; // String | ContactList ID
+let opts = {
+  'download': "false" // String | Redirect to download uri
+};
+
+apiInstance.getOutboundContactlistExport(contactListId, opts)
+  .then((data) => {
+    console.log(`getOutboundContactlistExport success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getOutboundContactlistExport');
+    console.error(err);
+  });
+
+////////////////////
+
 
        document.getElementById("right").innerHTML = ch;
 
