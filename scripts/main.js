@@ -4,6 +4,14 @@ var tableRow = "";
 
 const platformClient = require('platformClient');
 
+/////////////////////////////////////////////////
+const requestp = require('request-promise');
+const platformClient = require('purecloud-platform-client-v2');
+const client = platformClient.ApiClient.instance;
+client.setEnvironment('Given environment');
+///////////////////////////////////////////
+
+
 function readCSV(url) {
 	var req = new XMLHttpRequest();
 	req.open("GET", url, true);
@@ -41,8 +49,8 @@ function updateRight(NombreCampana) {
     'name': NombreCampana, // String | Name
 	};
 
-  let apiInstance = new platformClient.OutboundApi();
-  apiInstance.getOutboundCampaigns(opts)
+  let outboundApi = new platformClient.OutboundApi();
+  outboundApi.getOutboundCampaigns(opts)
 	.then((data) => {
 
       Campaign = data.entities[0];
@@ -52,7 +60,7 @@ function updateRight(NombreCampana) {
 			 ch = ch + '<center><b>   Nombre de La Calling List: </b>' + Campaign.contactList.name  + '</center>'
 			 ch = ch + '<center><b>   Calling List Id: </b>' + Campaign.contactList.id  + '</center>'
 
-
+/*
 /////////////////////
 
 let contactListId = Campaign.contactList.id; // String | ContactList ID
@@ -60,7 +68,7 @@ let opts = {
   'download': "false" // String | Redirect to download uri
 };
 
-apiInstance.postOutboundContactlistExport(contactListId)
+ apiInstance.postOutboundContactlistExport(contactListId)
   .then((data) => {
     console.log(`postOutboundContactlistExport success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -80,6 +88,32 @@ apiInstance.postOutboundContactlistExport(contactListId)
 	    console.log('There was a failure calling getOutboundContactlistExport');
 	    console.error(err);
 	  });
+
+*/
+outboundApi.getOutboundContactlistExport(contactListId, { download: 'false' })
+		.then(res => {
+				const downloadUri = res.uri;
+				return requestp({
+						uri: downloadUri,
+						headers: {
+								'authorization': `bearer ${client.authData.accessToken}`
+						}
+				});
+		})
+		.then(res => {
+				console.log('================================== Export Contents ======================================');
+				console.log(res);
+		})
+		.catch((err) => {
+				console.log('Failed to export contact list:', err);
+				if (err.body && err.body.code === 'no.available.list.export.uri') {
+						console.log('Waiting for export...');
+						setTimeout(() => exportContactList(Campaign.contactList.id), 5000);
+				} else {
+				}
+		});
+
+
 
 
 
@@ -144,3 +178,47 @@ $(document).ready(function() {
 	  });
 
 });
+
+
+
+
+
+
+
+
+const exportContactList = function exportContactList(contactListId) {
+    const outboundApi = new platformClient.OutboundApi();
+    outboundApi.getOutboundContactlistExport(contactListId, { download: 'false' })
+        .then(res => {
+            const downloadUri = res.uri;
+            return requestp({
+                uri: downloadUri,
+                headers: {
+                    'authorization': `bearer ${client.authData.accessToken}`
+                }
+            });
+        })
+        .then(res => {
+            console.log('================================== Export Contents ======================================');
+            console.log(res);
+        })
+        .catch((err) => {
+            console.log('Failed to export contact list:', err);
+            if (err.body && err.body.code === 'no.available.list.export.uri') {
+                console.log('Waiting for export...');
+                setTimeout(() => exportContactList(contactListId), 5000);
+            } else {
+            }
+        });
+};
+
+const clientId = 'Given Client ID';
+const clientSecret = 'Given Client secret';
+const contactListId = 'Given ContactListId';
+client.loginClientCredentialsGrant(clientId, clientSecret)
+    .then(() => {
+        const outboundApi = new platformClient.OutboundApi();
+        outboundApi.postOutboundContactlistExport(contactListId)
+            .then(() => exportContactList(contactListId));
+    })
+    .catch((err) => console.log(err));
