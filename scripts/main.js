@@ -42,16 +42,17 @@ apiInstance.postOutboundContactlistExport(contactListId)
 
 	setTimeout(function() {
 	      console.log('Esperando 3 segs');
+				apiInstance.getOutboundContactlistExport(contactListId, opts)
+				  .then((data) => {
+				    console.log(`getOutboundContactlistExport success! data: ${JSON.stringify(data, null, 2)}`);
+				  })
+				  .catch((err) => {
+				    console.log('There was a failure calling getOutboundContactlistExport');
+				    console.error(err);
+				  });
 	}, 3000)
 
-apiInstance.getOutboundContactlistExport(contactListId, opts)
-  .then((data) => {
-    console.log(`getOutboundContactlistExport success! data: ${JSON.stringify(data, null, 2)}`);
-  })
-  .catch((err) => {
-    console.log('There was a failure calling getOutboundContactlistExport');
-    console.error(err);
-  });
+
 
 ////////////////////
 
