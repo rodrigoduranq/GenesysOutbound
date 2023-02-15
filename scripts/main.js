@@ -3,7 +3,7 @@ var _me = {};
 var tableRow = "";
 
 const platformClient = require('platformClient');
-const requestp = require('request-promise');
+
 
 /////////////////////////////////////////////////
 //const requestp = require('request-promise');
