@@ -67,6 +67,14 @@ function updateRight(NombreCampana) {
 			   .then((data) => {
 			     console.log(`postOutboundContactlistfiltersPreview success! data: ${JSON.stringify(data, null, 2)}`);
 
+					 console.log('Longitud Preview');
+	                 console.log(data.preview.length);
+
+					 console.log('Filtered Contacts');
+	                 console.log(data.filteredContacts);
+									 
+
+
            for (let i = 0; i < data.preview.length; i++) {
 						    ch = ch + data.preview[i].id + "<br>";
 						 }
