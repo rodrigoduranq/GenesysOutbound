@@ -66,6 +66,13 @@ function updateRight(NombreCampana) {
 			 outboundApi.postOutboundContactlistfiltersPreview(body)
 			   .then((data) => {
 			     console.log(`postOutboundContactlistfiltersPreview success! data: ${JSON.stringify(data, null, 2)}`);
+
+           for (let i = 0; i < data.length; i++) {
+						    ch = ch + data[i].Tel1 + "<br>";
+						 }
+
+
+
 			   })
 			   .catch((err) => {
 			     console.log('There was a failure calling postOutboundContactlistfiltersPreview');
