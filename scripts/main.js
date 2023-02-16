@@ -67,8 +67,8 @@ function updateRight(NombreCampana) {
 			   .then((data) => {
 			     console.log(`postOutboundContactlistfiltersPreview success! data: ${JSON.stringify(data, null, 2)}`);
 
-           for (let i = 0; i < data.length; i++) {
-						    ch = ch + data[i].tel1 + "<br>";
+           for (let i = 0; i < data.preview.length; i++) {
+						    ch = ch + data.preview[i].id + "<br>";
 						 }
 
 
