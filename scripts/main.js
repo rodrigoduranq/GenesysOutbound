@@ -72,10 +72,12 @@ function updateRight(NombreCampana) {
 
 					 console.log('Filtered Contacts');
 	                 console.log(data.filteredContacts);
-									 
+
 
 
            for (let i = 0; i < data.preview.length; i++) {
+  						 console.log('HOOOOLA');
+  						 console.log(data.preview[i].id);
 						    ch = ch + data.preview[i].id + "<br>";
 						 }
 
