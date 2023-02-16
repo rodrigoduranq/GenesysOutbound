@@ -28,8 +28,40 @@ function updateRight(NombreCampana) {
 			 ch = ch + '<center><b>   Nombre de La Calling List: </b>' + Campaign.contactList.name  + '</center>'
 			 ch = ch + '<center><b>   Calling List Id: </b>' + Campaign.contactList.id  + '</center>'
 
-			 
-			 let body = {}; // Object | ContactListFilter
+
+			 let body = {
+			    "name": "",
+			    "version": 0,
+			    "contactList": {
+			       "id": "8ce124e1-ab62-47ae-acfd-63a34b821158",
+			       "name": "",
+			       "selfUri": ""
+			    },
+			    "clauses": [
+			       {
+			          "filterType": "AND",
+			          "predicates": [
+			             {
+			                "column": "tel1",
+			                "columnType": "alphabetic",
+			                "operator": "ENDS_WITH",
+			                "value": "0",
+			                "range": {
+			                   "min": "",
+			                   "max": "",
+			                   "minInclusive": true,
+			                   "maxInclusive": true,
+			                   "inSet": []
+			                },
+			                "inverted": true
+			             }
+			          ]
+			       }
+			    ],
+			    "filterType": "AND"
+				}; // Object | ContactListFilter
+
+
 
 			 outboundApi.postOutboundContactlistfiltersPreview(body)
 			   .then((data) => {
