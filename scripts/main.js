@@ -81,6 +81,8 @@ function updateRight(NombreCampana) {
 						    ch = ch + data.preview[i].id + "<br>";
 						 }
 
+						 console.log(ch);
+
 
 
 			   })
