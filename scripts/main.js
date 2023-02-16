@@ -5,39 +5,6 @@ var tableRow = "";
 const platformClient = require('platformClient');
 
 
-/////////////////////////////////////////////////
-//const requestp = require('request-promise');
-//const platformClient = require('purecloud-platform-client-v2');
-//const client = platformClient.ApiClient.instance;
-//client.setEnvironment('Given environment');
-///////////////////////////////////////////
-
-
-function readCSV(url) {
-	var req = new XMLHttpRequest();
-	req.open("GET", url, true);
-	req.send();
-
-	req.onreadystatechange = function() {
-		if (req.readyState === 4 && req.status === 200) {
-			var lines = req.responseText.split("\n");
-
-			var table = "<table>";
-			for (var i = 0; i < lines.length; i++) {
-				var cells = lines[i].split(",");
-
-				table += "<tr>";
-				for (var j = 0; j < cells.length; j++) {
-					table += "<td>" + cells[j] + "</td>";
-				}
-				table += "</tr>";
-			}
-			table += "</table>";
-
-			document.getElementById("output").innerHTML = table;
-		}
-	};
-}
 
 
 
@@ -61,60 +28,17 @@ function updateRight(NombreCampana) {
 			 ch = ch + '<center><b>   Nombre de La Calling List: </b>' + Campaign.contactList.name  + '</center>'
 			 ch = ch + '<center><b>   Calling List Id: </b>' + Campaign.contactList.id  + '</center>'
 
+			 
+			 let body = {}; // Object | ContactListFilter
 
-let contactListId = Campaign.contactList.id; // String | ContactList ID
-let opts = {
-  'download': "false" // String | Redirect to download uri
-};
-
- outboundApi.postOutboundContactlistExport(contactListId)
-  .then((data) => {
-    console.log(`postOutboundContactlistExport success! data: ${JSON.stringify(data, null, 2)}`);
-  })
-  .catch((err) => {
-    console.log('There was a failure calling postOutboundContactlistExport');
-    console.error(err);
-  });
-
-/*
-	apiInstance.getOutboundContactlistExport(contactListId, opts)
-	.then((data) => {
-	    console.log(`getOutboundContactlistExport success! data: ${JSON.stringify(data, null, 2)}`);
-
-			readCSV(data.uri);
-
-	  })
-	  .catch((err) => {
-	    console.log('There was a failure calling getOutboundContactlistExport');
-	    console.error(err);
-	  });
-
-*/
-outboundApi.getOutboundContactlistExport(contactListId, { download: 'false' })
-		.then(res => {
-				const downloadUri = res.uri;
-				return requestp({
-						uri: downloadUri,
-						headers: {
-								'authorization': `bearer ${client.authData.accessToken}`
-						}
-				});
-		})
-		.then(res => {
-				console.log('================================== Export Contents ======================================');
-				console.log(res);
-		})
-		.catch((err) => {
-				console.log('Failed to export contact list:', err);
-				if (err.body && err.body.code === 'no.available.list.export.uri') {
-						console.log('Waiting for export...');
-						setTimeout(() => exportContactList(Campaign.contactList.id), 5000);
-				} else {
-				}
-		});
-
-
-
+			 outboundApi.postOutboundContactlistfiltersPreview(body)
+			   .then((data) => {
+			     console.log(`postOutboundContactlistfiltersPreview success! data: ${JSON.stringify(data, null, 2)}`);
+			   })
+			   .catch((err) => {
+			     console.log('There was a failure calling postOutboundContactlistfiltersPreview');
+			     console.error(err);
+			   });
 
 
 ////////////////////
