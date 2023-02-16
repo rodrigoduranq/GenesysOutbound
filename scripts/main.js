@@ -28,6 +28,7 @@ function updateRight(NombreCampana) {
 			 ch = ch + '<center><b>   Nombre de La Calling List: </b>' + Campaign.contactList.name  + '</center>'
 			 ch = ch + '<center><b>   Calling List Id: </b>' + Campaign.contactList.id  + '</center>'
 
+			 ch = ch + '<center>'
 
 			 let body = {
 			    "name": "",
@@ -80,6 +81,8 @@ function updateRight(NombreCampana) {
   						 console.log(data.preview[i].id);
 						    ch = ch + data.preview[i].id + "<br>";
 						 }
+
+						 ch = ch + '</center>'
 
 						 console.log(ch);
 
