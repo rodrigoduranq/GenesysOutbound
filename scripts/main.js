@@ -116,10 +116,10 @@ data:
      ch = ch + "<table>"
 		 ch = ch + "<tr>"
 
-    claves.forEach (clave =>)
+    claves.forEach (clave =>
 		{
 			console.log (clave);
-		}
+		});
 
      ch = ch + "<tr>"
 
