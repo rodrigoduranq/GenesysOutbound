@@ -31,12 +31,27 @@ ch = ""
 			 ch = ch + '<center><b>   Calling List Id: </b>' + Campaign.contactList.id  + '</center>'
 
 			 ch = ch + '<center>'
+///////////////////////////////////
+let opts = {
+  'includeImportStatus': false, // Boolean | Include import status
+  'includeSize': false // Boolean | Include size
+};
 
+outboundApi.getOutboundContactlistsDivisionview(Campaign.contactList.id, opts)
+  .then((data) => {
+    console.log(`getOutboundContactlistsDivisionview success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getOutboundContactlistsDivisionview');
+    console.error(err);
+  });
+
+///////////////////////////////////
 			 let body = {
 			    "name": "",
 			    "version": 0,
 			    "contactList": {
-			       "id": Campaign.contactList.id,
+			       "id": '8ce124e1-ab62-47ae-acfd-63a34b821158',
 			       "name": "",
 			       "selfUri": ""
 			    },
