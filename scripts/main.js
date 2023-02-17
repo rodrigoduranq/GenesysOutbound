@@ -102,7 +102,7 @@ data:
 /*  Sacar todas las keys */
       const claves = [];
       data.preview.forEach(objeto => {
-      Object.keys(objeto).forEach(clave => {
+      Object.keys(objeto.data).forEach(clave => {
         if (!claves.includes(clave)) {
         claves.push(clave);
        }
