@@ -97,6 +97,9 @@ data:
 
 
 */
+
+
+/*  Sacar todas las keys */
       const claves = [];
       data.forEach(objeto => {
       Object.keys(objeto).forEach(clave => {
@@ -106,9 +109,9 @@ data:
       });
       });
 
-      console.log 'Van las claves';
+      console.log ('Van las claves');
 			console.log(claves);
-			console.log 'Fin Claves';
+			console.log ('Fin Claves');
 
 
            for (let i = 0; i < data.preview.length; i++) {
@@ -171,7 +174,7 @@ $(document).ready(function() {
 					    console.log (data.pageCount);
 
 										$.each(data.entities, function(index, Campaign) {
-					              console.log (Campaign.name + "_____________________" + Campaign.contactList.name);
+//					              console.log (Campaign.name + "_____________________" + Campaign.contactList.name);
 
 												tableRow = tableRow + '<tr id="' + Campaign.id + '">' +
 														'<td><b>' + Campaign.name + '</b><p>' + Campaign.contactList.name + '</td>' +
