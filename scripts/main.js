@@ -79,7 +79,6 @@ ch = ""
 
 
            for (let i = 0; i < data.preview.length; i++) {
-  						 console.log('HOOOOLA');
   						 console.log(data.preview[i].id);
 						    ch = ch + data.preview[i].id + "<br>";
 						 }
@@ -88,6 +87,7 @@ ch = ""
 
 						 console.log(ch);
 
+       document.getElementById("right").innerHTML = ch;
 
 
 			   })
@@ -100,7 +100,7 @@ ch = ""
 ////////////////////
 
 
-       document.getElementById("right").innerHTML = ch;
+
 
   })
 }
