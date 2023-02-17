@@ -36,7 +36,7 @@ ch = ""
 			    "name": "",
 			    "version": 0,
 			    "contactList": {
-			       "id": '8ce124e1-ab62-47ae-acfd-63a34b821158',
+			       "id": Campaign.contactList.id,
 			       "name": "",
 			       "selfUri": ""
 			    },
