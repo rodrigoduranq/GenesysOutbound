@@ -113,7 +113,42 @@ data:
 			console.log(claves);
 			console.log ('Fin Claves');
 
-     ch = ch + "<table class="tabla-alternada">"
+     ch = ch + "<table class='tabla-alternada'>"
+		 ch = ch + "<tr>"
+
+        claves.forEach (clave =>
+		    {
+    			console.log (clave);
+		    	ch = ch + "<td>" + clave + "</td>"
+     		});
+     ch = ch + "</tr>"
+
+		 ch = ch + "<tr>"
+
+        claves.forEach (clave =>
+		    {
+    			console.log (clave);
+		    	ch = ch + "<td>" + clave + "</td>"
+     		});
+     ch = ch + "</tr>"
+
+		 ch = ch + "<tr>"
+
+        claves.forEach (clave =>
+		    {
+    			console.log (clave);
+		    	ch = ch + "<td>" + clave + "</td>"
+     		});
+     ch = ch + "</tr>"
+
+
+
+
+		 ch = ch + "</table>"
+
+ch =  ch + 'br'
+
+		 ch = ch + "<table class='tabla-minimalista'>"
 		 ch = ch + "<tr>"
 
         claves.forEach (clave =>
