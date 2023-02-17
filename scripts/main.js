@@ -121,7 +121,7 @@ data:
 			console.log (clave);
 		}
 
-     ch = ch + "<tr>"     
+     ch = ch + "<tr>"
 
 		 ch = ch + "</table>"
 
