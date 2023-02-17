@@ -166,12 +166,12 @@ $(document).ready(function() {
 					  'pageNumber': 1, // Number | Page number
 					};
 
-// FALTARIA CICLAR
+// TENEMOS PENDIENTE CILO POR SI SON VARIAS !!!
  					 apiInstance.getOutboundCampaigns(opts)
 					  .then((data) => {
 
-					    console.log ("bbbbbbb bbb");
-					    console.log (data.pageCount);
+	//				    console.log ("bbbbbbb bbb");
+	//				    console.log (data.pageCount);
 
 										$.each(data.entities, function(index, Campaign) {
 //					              console.log (Campaign.name + "_____________________" + Campaign.contactList.name);
@@ -181,7 +181,7 @@ $(document).ready(function() {
 														'<td><button id="' + Campaign.id + '-button" class="elButton btn btn-default" onclick="updateRight(\'' + Campaign.name + '\')">MOSTRAR</button></td>' +   /// AGARRAR REFERENCIA DE LAS COLAS PARA ONCLICK
 													'</tr>';
 					    });
-							console.log ("CHECKPONIT B");
+//							console.log ("CHECKPONIT B");
 
 						 $('#Campanas').append(tableRow);
 					  });
