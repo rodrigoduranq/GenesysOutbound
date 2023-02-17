@@ -113,27 +113,48 @@ data:
 			console.log(claves);
 			console.log ('Fin Claves');
 
-     ch = ch + "<table>"
+     ch = ch + "<table class="tabla-alternada">"
 		 ch = ch + "<tr>"
 
-    claves.forEach (clave =>
-		{
-			console.log (clave);
-			ch = ch + "<td>" + clave + "</td>"
-		});
+        claves.forEach (clave =>
+		    {
+    			console.log (clave);
+		    	ch = ch + "<td>" + clave + "</td>"
+     		});
+     ch = ch + "</tr>"
 
-     ch = ch + "<tr>"
+		 ch = ch + "<tr>"
+
+        claves.forEach (clave =>
+		    {
+    			console.log (clave);
+		    	ch = ch + "<td>" + clave + "</td>"
+     		});
+     ch = ch + "</tr>"
+
+		 ch = ch + "<tr>"
+
+        claves.forEach (clave =>
+		    {
+    			console.log (clave);
+		    	ch = ch + "<td>" + clave + "</td>"
+     		});
+     ch = ch + "</tr>"
+
+
+
 
 		 ch = ch + "</table>"
 
 
-           for (let i = 0; i < data.preview.length; i++) {
+/*           for (let i = 0; i < data.preview.length; i++) {
   						 console.log(data.preview[i].id);
 							 console.log(data.preview[i].data.Nombre);
 							 console.log(data.preview[i].data.tel1);
 						    ch = ch + data.preview[i].id + "<br>";
 						 }
 
+	*/
 						 ch = ch + '</center>'
 
 						 console.log(ch);

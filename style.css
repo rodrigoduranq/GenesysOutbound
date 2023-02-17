@@ -74,3 +74,49 @@ html, body, div, span, p {
 	        height: 100%;
 	        float: left;
 	      }
+
+
+
+
+
+
+
+				.tabla-alternada {
+				  width: 100%;
+				  border-collapse: collapse;
+				}
+
+				.tabla-alternada th,
+				.tabla-alternada td {
+				  padding: 8px;
+				  text-align: left;
+				}
+
+				.tabla-alternada th {
+				  background-color: #4CAF50;
+				  color: white;
+				}
+
+				.tabla-alternada tr:nth-child(even) {
+				  background-color: #f2f2f2;
+				}
+
+
+
+				.tabla-minimalista {
+				  width: 100%;
+				  border: 1px solid #ddd;
+				  border-collapse: collapse;
+				}
+
+				.tabla-minimalista th,
+				.tabla-minimalista td {
+				  border: 1px solid #ddd;
+				  padding: 8px;
+				  text-align: left;
+				}
+
+				.tabla-minimalista th {
+				  background-color: #f2f2f2;
+				  color: #333;
+				}
