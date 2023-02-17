@@ -78,8 +78,28 @@ ch = ""
 
 
 
+/*
+postOutboundContactlistfiltersPreview success! data: {
+  "filteredContacts": 100,
+  "totalContacts": 100,
+  "preview": [
+    {
+      "id": "e2cf612d610748737f9b36ab68199865",
+      "contactListId": "8ce124e1-ab62-47ae-acfd-63a34b821158",
+      "data": {
+        "Cliente": "301648069",
+        "Nombre": "LEONARDO QUINTANA BARAJAS",
+        "Domicilio": "GUANAJUATO-LEON-FLORES MAGON-CALLE SIETE-128---F",
+        "EstadoCivil": "S",
+        "Edad": "32",
+
+
+*/
+
            for (let i = 0; i < data.preview.length; i++) {
   						 console.log(data.preview[i].id);
+							 console.log(data.preview[i].data.Nombre);
+							 console.log(data.preview[i].data.tel1);
 						    ch = ch + data.preview[i].id + "<br>";
 						 }
 
