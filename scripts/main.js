@@ -79,7 +79,9 @@ ch = ""
 
 
 /*
-postOutboundContactlistfiltersPreview success! data: {
+postOutboundContactlistfiltersPreview success!
+data:
+{
   "filteredContacts": 100,
   "totalContacts": 100,
   "preview": [
@@ -95,6 +97,19 @@ postOutboundContactlistfiltersPreview success! data: {
 
 
 */
+      const claves = [];
+      data.forEach(objeto => {
+      Object.keys(objeto).forEach(clave => {
+        if (!claves.includes(clave)) {
+        claves.push(clave);
+       }
+      });
+      });
+
+      console.log 'Van las claves';
+			console.log(claves);
+			console.log 'Fin Claves';
+
 
            for (let i = 0; i < data.preview.length; i++) {
   						 console.log(data.preview[i].id);
