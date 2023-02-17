@@ -119,6 +119,7 @@ data:
     claves.forEach (clave =>
 		{
 			console.log (clave);
+			ch = ch + "<td>" + clave + "</td>"
 		});
 
      ch = ch + "<tr>"
