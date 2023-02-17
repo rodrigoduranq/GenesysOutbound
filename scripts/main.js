@@ -113,6 +113,18 @@ data:
 			console.log(claves);
 			console.log ('Fin Claves');
 
+     ch = ch + "<table>"
+		 ch = ch + "<tr>"
+
+    claves.forEach (clave =>)
+		{
+			console.log (clave);
+		}
+
+     ch = ch + "<tr>"     
+
+		 ch = ch + "</table>"
+
 
            for (let i = 0; i < data.preview.length; i++) {
   						 console.log(data.preview[i].id);
