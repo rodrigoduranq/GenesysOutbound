@@ -93,7 +93,28 @@ outboundApi.getOutboundContactlistsDivisionview(Campaign.contactList.id, opts)
 		 });
 	ch = ch + "</tr>"
 
+    data.ForEach (registro =>
+			{
+            registro.data.ForEach (campo =>
+							{
+                     console.log (campo);
 
+							});
+			});
+
+/*
+
+// Recorremos cada elemento del array
+data.forEach(function(elemento) {
+  // Recorremos cada propiedad del objeto
+  Object.keys(elemento).forEach(function(clave) {
+    // Obtenemos el valor correspondiente a la clave
+    var valor = elemento[clave];
+    console.log(clave + ': ' + valor);
+  });
+});
+
+*/
 
 	ch = ch + "</table>"
 
