@@ -42,15 +42,20 @@ outboundApi.getOutboundContactlistsDivisionview(Campaign.contactList.id, opts)
 		claves = data.columnNames;
 		columna_tel = data.phoneColumns[0].columnName;
 
-		console.log (claves);
-		console.log ('Columna Tel = ' + columna_tel);
-		console.log ('Campaign.contactList.id = ' + Campaign.contactList.id);
 
   })
   .catch((err) => {
     console.log('There was a failure calling getOutboundContactlistsDivisionview');
     console.error(err);
   });
+
+
+
+	console.log (claves);
+	console.log ('Columna Tel = ' + columna_tel);
+	console.log ('Campaign.contactList.id = ' + Campaign.contactList.id);
+
+
 
 //////////////////////////////PREPARA FILTRO PARA CONTACT LIST //////////////////////////////////////////
 			 let body = {
