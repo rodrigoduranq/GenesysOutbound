@@ -43,7 +43,8 @@ outboundApi.getOutboundContactlistsDivisionview(Campaign.contactList.id, opts)
 		columna_tel = data.phoneColumns[0].columnName;
 
 		console.log (claves);
-		console.log (columna_tel);
+		console.log ('Columna Tel = ' + columna_tel);
+		console.log ('Campaign.contactList.id = ' + Campaign.contactList.id);
 
   })
   .catch((err) => {
