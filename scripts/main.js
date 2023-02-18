@@ -39,7 +39,7 @@ let opts = {
 
 outboundApi.getOutboundContactlistsDivisionview(Campaign.contactList.id, opts)
   .then((data) => {
-    console.log(`getOutboundContactlistsDivisionview success! data: ${JSON.stringify(data, null, 2)}`);
+//    console.log(`getOutboundContactlistsDivisionview success! data: ${JSON.stringify(data, null, 2)}`);
 		columnas = data.columnNames;
 		columna_tel = data.phoneColumns[0].columnName;
 
@@ -89,13 +89,13 @@ outboundApi.getOutboundContactlistsDivisionview(Campaign.contactList.id, opts)
 
 			 outboundApi.postOutboundContactlistfiltersPreview(body)
 			   .then((data) => {
-			     console.log(`postOutboundContactlistfiltersPreview success! data: ${JSON.stringify(data, null, 2)}`);
+	//		     console.log(`postOutboundContactlistfiltersPreview success! data: ${JSON.stringify(data, null, 2)}`);
 
-					 console.log('Longitud Preview');
-	                 console.log(data.preview.length);
+	//				 console.log('Longitud Preview');
+	 //                console.log(data.preview.length);
 
-					 console.log('Filtered Contacts');
-	                 console.log(data.filteredContacts);
+	//				 console.log('Filtered Contacts');
+	//                 console.log(data.filteredContacts);
 
 
 
@@ -130,16 +130,16 @@ data:
       });
       });
 
-      console.log ('Van las claves');
-			console.log(claves);
-			console.log ('Fin Claves');
+//      console.log ('Van las claves');
+//			console.log(claves);
+//			console.log ('Fin Claves');
 
      ch = ch + "<table class='tabla-alternada'>"
 		 ch = ch + "<tr>"
 
         claves.forEach (clave =>
 		    {
-    			console.log (clave);
+  //  			console.log (clave);
 		    	ch = ch + "<td>" + clave + "</td>"
      		});
      ch = ch + "</tr>"
@@ -148,7 +148,7 @@ data:
 
         claves.forEach (clave =>
 		    {
-    			console.log (clave);
+    //			console.log (clave);
 		    	ch = ch + "<td>" + clave + "</td>"
      		});
      ch = ch + "</tr>"
@@ -157,7 +157,7 @@ data:
 
         claves.forEach (clave =>
 		    {
-    			console.log (clave);
+    	//		console.log (clave);
 		    	ch = ch + "<td>" + clave + "</td>"
      		});
      ch = ch + "</tr>"
