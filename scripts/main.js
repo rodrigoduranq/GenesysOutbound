@@ -92,27 +92,7 @@ outboundApi.getOutboundContactlistsDivisionview(Campaign.contactList.id, opts)
 		 });
 	ch = ch + "</tr>"
 
-	ch = ch + "<tr>"
-
-		 claves.forEach (clave =>
-		 {
-			 ch = ch + "<td>" + clave + "</td>"
-		 });
-	ch = ch + "</tr>"
-
-	ch = ch + "<tr>"
-
-		 claves.forEach (clave =>
-		 {
-			 ch = ch + "<td>" + clave + "</td>"
-		 });
-	ch = ch + "</tr>"
-
-
-
-
 	ch = ch + "</table>"
-
 	ch = ch + '</center>'
 
 //						 console.log(ch);
