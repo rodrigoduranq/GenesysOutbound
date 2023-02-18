@@ -207,7 +207,7 @@ ch =  ch + 'br'
 	*/
 						 ch = ch + '</center>'
 
-						 console.log(ch);
+//						 console.log(ch);
 
        document.getElementById("right").innerHTML = ch;
 
@@ -254,19 +254,14 @@ $(document).ready(function() {
  					 apiInstance.getOutboundCampaigns(opts)
 					  .then((data) => {
 
-	//				    console.log ("bbbbbbb bbb");
-	//				    console.log (data.pageCount);
 
 										$.each(data.entities, function(index, Campaign) {
-//					              console.log (Campaign.name + "_____________________" + Campaign.contactList.name);
 
 												tableRow = tableRow + '<tr id="' + Campaign.id + '">' +
 														'<td><b>' + Campaign.name + '</b><p>' + Campaign.contactList.name + '</td>' +
 														'<td><button id="' + Campaign.id + '-button" class="elButton btn btn-default" onclick="updateRight(\'' + Campaign.name + '\')">MOSTRAR</button></td>' +   /// AGARRAR REFERENCIA DE LAS COLAS PARA ONCLICK
 													'</tr>';
 					    });
-//							console.log ("CHECKPONIT B");
-
 						 $('#Campanas').append(tableRow);
 					  });
 			});
