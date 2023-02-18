@@ -4,11 +4,6 @@ var tableRow = "";
 
 const platformClient = require('platformClient');
 
-
-
-
-
-
 function updateRight(NombreCampana) {
 
 	let opts = {
@@ -37,13 +32,15 @@ let opts = {
   'includeSize': false // Boolean | Include size
 };
 
+
+/////////////////////////OBTENER INFOFMACION DE CONTACT LIST //////////////////////////////
 outboundApi.getOutboundContactlistsDivisionview(Campaign.contactList.id, opts)
   .then((data) => {
 //    console.log(`getOutboundContactlistsDivisionview success! data: ${JSON.stringify(data, null, 2)}`);
 		columnas = data.columnNames;
 		columna_tel = data.phoneColumns[0].columnName;
 
-		console.log (columnas);
+		console.log (claves);
 		console.log (columna_tel);
 
   })
@@ -52,12 +49,12 @@ outboundApi.getOutboundContactlistsDivisionview(Campaign.contactList.id, opts)
     console.error(err);
   });
 
-///////////////////////////////////
+//////////////////////////////PREPARA FILTRO PARA CONTACT LIST //////////////////////////////////////////
 			 let body = {
 			    "name": "",
 			    "version": 0,
 			    "contactList": {
-			       "id": '8ce124e1-ab62-47ae-acfd-63a34b821158',
+			       "id": Campaign.contactList.id,
 			       "name": "",
 			       "selfUri": ""
 			    },
@@ -66,10 +63,10 @@ outboundApi.getOutboundContactlistsDivisionview(Campaign.contactList.id, opts)
 			          "filterType": "AND",
 			          "predicates": [
 			             {
-			                "column": "tel1",
-			                "columnType": "alphabetic",
-			                "operator": "ENDS_WITH",
-			                "value": "0",
+			                "column": columna_tel,
+ 											"columnType": "alphabetic",
+ 										  "operator": "LESS_THAN_EQUALS",   /// TODOS LOS REGISTROS
+ 										  "value": "0",
 			                "range": {
 			                   "min": "",
 			                   "max": "",
@@ -89,57 +86,13 @@ outboundApi.getOutboundContactlistsDivisionview(Campaign.contactList.id, opts)
 
 			 outboundApi.postOutboundContactlistfiltersPreview(body)
 			   .then((data) => {
-	//		     console.log(`postOutboundContactlistfiltersPreview success! data: ${JSON.stringify(data, null, 2)}`);
 
-	//				 console.log('Longitud Preview');
-	 //                console.log(data.preview.length);
-
-	//				 console.log('Filtered Contacts');
-	//                 console.log(data.filteredContacts);
-
-
-
-/*
-postOutboundContactlistfiltersPreview success!
-data:
-{
-  "filteredContacts": 100,
-  "totalContacts": 100,
-  "preview": [
-    {
-      "id": "e2cf612d610748737f9b36ab68199865",
-      "contactListId": "8ce124e1-ab62-47ae-acfd-63a34b821158",
-      "data": {
-        "Cliente": "301648069",
-        "Nombre": "LEONARDO QUINTANA BARAJAS",
-        "Domicilio": "GUANAJUATO-LEON-FLORES MAGON-CALLE SIETE-128---F",
-        "EstadoCivil": "S",
-        "Edad": "32",
-
-
-*/
-
-
-/*  Sacar todas las keys */
-      const claves = [];
-      data.preview.forEach(objeto => {
-      Object.keys(objeto.data).forEach(clave => {
-        if (!claves.includes(clave)) {
-        claves.push(clave);
-       }
-      });
-      });
-
-//      console.log ('Van las claves');
-//			console.log(claves);
-//			console.log ('Fin Claves');
 
      ch = ch + "<table class='tabla-alternada'>"
 		 ch = ch + "<tr>"
 
         claves.forEach (clave =>
 		    {
-  //  			console.log (clave);
 		    	ch = ch + "<td>" + clave + "</td>"
      		});
      ch = ch + "</tr>"
@@ -148,7 +101,6 @@ data:
 
         claves.forEach (clave =>
 		    {
-    //			console.log (clave);
 		    	ch = ch + "<td>" + clave + "</td>"
      		});
      ch = ch + "</tr>"
@@ -157,7 +109,6 @@ data:
 
         claves.forEach (clave =>
 		    {
-    	//		console.log (clave);
 		    	ch = ch + "<td>" + clave + "</td>"
      		});
      ch = ch + "</tr>"
@@ -167,40 +118,6 @@ data:
 
 		 ch = ch + "</table>"
 
-ch =  ch + 'br'
-
-		 ch = ch + "<table class='tabla-minimalista'>"
-		 ch = ch + "<tr>"
-
-        claves.forEach (clave =>
-		    {
-    			console.log (clave);
-		    	ch = ch + "<td>" + clave + "</td>"
-     		});
-     ch = ch + "</tr>"
-
-		 ch = ch + "<tr>"
-
-        claves.forEach (clave =>
-		    {
-    			console.log (clave);
-		    	ch = ch + "<td>" + clave + "</td>"
-     		});
-     ch = ch + "</tr>"
-
-		 ch = ch + "<tr>"
-
-        claves.forEach (clave =>
-		    {
-    			console.log (clave);
-		    	ch = ch + "<td>" + clave + "</td>"
-     		});
-     ch = ch + "</tr>"
-
-
-
-
-		 ch = ch + "</table>"
 
 
 /*           for (let i = 0; i < data.preview.length; i++) {
