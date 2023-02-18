@@ -2,6 +2,7 @@ var usersApi;
 var _me = {};
 var tableRow = "";
 var columna_tel = "";
+var claves = {};
 
 const platformClient = require('platformClient');
 
@@ -38,7 +39,7 @@ let opts = {
 outboundApi.getOutboundContactlistsDivisionview(Campaign.contactList.id, opts)
   .then((data) => {
 //    console.log(`getOutboundContactlistsDivisionview success! data: ${JSON.stringify(data, null, 2)}`);
-		columnas = data.columnNames;
+		claves = data.columnNames;
 		columna_tel = data.phoneColumns[0].columnName;
 
 		console.log (claves);
