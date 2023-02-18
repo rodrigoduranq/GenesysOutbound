@@ -93,9 +93,9 @@ outboundApi.getOutboundContactlistsDivisionview(Campaign.contactList.id, opts)
 		 });
 	ch = ch + "</tr>"
 
-    data.ForEach (registro =>
+    data.forEach (registro =>
 			{
-            registro.data.ForEach (campo =>
+            registro.data.forEach (campo =>
 							{
                      console.log (campo);
 
