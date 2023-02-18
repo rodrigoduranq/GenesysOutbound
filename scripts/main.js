@@ -83,6 +83,7 @@ outboundApi.getOutboundContactlistsDivisionview(Campaign.contactList.id, opts)
 		outboundApi.postOutboundContactlistfiltersPreview(body)
 			.then((data) => {
 
+    console.log ('Aqui va Data');
 		console.log (data);
 
 	ch = ch + "<table class='tabla-alternada'>"
@@ -94,20 +95,18 @@ outboundApi.getOutboundContactlistsDivisionview(Campaign.contactList.id, opts)
 		 });
 	ch = ch + "</tr>"
 
+/*
     data.preview.forEach (registro =>
 			{
-				console.log (registro);
-				/*
             registro.preview.data.forEach (campo =>
 							{
                      console.log (campo);
 
 							});
-*/
 			});
 
-
 /*
+
 // Recorremos cada elemento del array
 data.forEach(function(elemento) {
   // Recorremos cada propiedad del objeto
@@ -117,6 +116,7 @@ data.forEach(function(elemento) {
     console.log(clave + ': ' + valor);
   });
 });
+
 */
 
 	ch = ch + "</table>"
