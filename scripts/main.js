@@ -40,6 +40,12 @@ let opts = {
 outboundApi.getOutboundContactlistsDivisionview(Campaign.contactList.id, opts)
   .then((data) => {
     console.log(`getOutboundContactlistsDivisionview success! data: ${JSON.stringify(data, null, 2)}`);
+		columnas = data.columnNames;
+		columna_tel = data.phoneColumns[0].columnName;
+
+		console.log (columnas);
+		console.log (columna_tel);
+
   })
   .catch((err) => {
     console.log('There was a failure calling getOutboundContactlistsDivisionview');
