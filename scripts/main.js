@@ -42,6 +42,83 @@ outboundApi.getOutboundContactlistsDivisionview(Campaign.contactList.id, opts)
 		claves = data.columnNames;
 		columna_tel = data.phoneColumns[0].columnName;
 
+		let body = {
+			 "name": "",
+			 "version": 0,
+			 "contactList": {
+					"id": Campaign.contactList.id,
+					"name": "",
+					"selfUri": ""
+			 },
+			 "clauses": [
+					{
+						 "filterType": "AND",
+						 "predicates": [
+								{
+									 "column": columna_tel,
+									 "columnType": "alphabetic",
+									 "operator": "LESS_THAN_EQUALS",   /// TODOS LOS REGISTROS
+									 "value": "0",
+									 "range": {
+											"min": "",
+											"max": "",
+											"minInclusive": true,
+											"maxInclusive": true,
+											"inSet": []
+									 },
+									 "inverted": true
+								}
+						 ]
+					}
+			 ],
+			 "filterType": "AND"
+		 }; // Object | ContactListFilter
+
+		console.log (claves);
+	 	console.log ('Columna Tel = ' + columna_tel);
+	 	console.log ('Campaign.contactList.id = ' + Campaign.contactList.id);
+
+
+		outboundApi.postOutboundContactlistfiltersPreview(body)
+			.then((data) => {
+
+
+	ch = ch + "<table class='tabla-alternada'>"
+	ch = ch + "<tr>"
+
+		 claves.forEach (clave =>
+		 {
+			 ch = ch + "<td>" + clave + "</td>"
+		 });
+	ch = ch + "</tr>"
+
+	ch = ch + "<tr>"
+
+		 claves.forEach (clave =>
+		 {
+			 ch = ch + "<td>" + clave + "</td>"
+		 });
+	ch = ch + "</tr>"
+
+	ch = ch + "<tr>"
+
+		 claves.forEach (clave =>
+		 {
+			 ch = ch + "<td>" + clave + "</td>"
+		 });
+	ch = ch + "</tr>"
+
+
+
+
+	ch = ch + "</table>"
+
+	ch = ch + '</center>'
+
+//						 console.log(ch);
+
+document.getElementById("right").innerHTML = ch;
+
 
   })
   .catch((err) => {
@@ -51,96 +128,6 @@ outboundApi.getOutboundContactlistsDivisionview(Campaign.contactList.id, opts)
 
 
 
-	console.log (claves);
-	console.log ('Columna Tel = ' + columna_tel);
-	console.log ('Campaign.contactList.id = ' + Campaign.contactList.id);
-
-
-
-//////////////////////////////PREPARA FILTRO PARA CONTACT LIST //////////////////////////////////////////
-			 let body = {
-			    "name": "",
-			    "version": 0,
-			    "contactList": {
-			       "id": Campaign.contactList.id,
-			       "name": "",
-			       "selfUri": ""
-			    },
-			    "clauses": [
-			       {
-			          "filterType": "AND",
-			          "predicates": [
-			             {
-			                "column": columna_tel,
- 											"columnType": "alphabetic",
- 										  "operator": "LESS_THAN_EQUALS",   /// TODOS LOS REGISTROS
- 										  "value": "0",
-			                "range": {
-			                   "min": "",
-			                   "max": "",
-			                   "minInclusive": true,
-			                   "maxInclusive": true,
-			                   "inSet": []
-			                },
-			                "inverted": true
-			             }
-			          ]
-			       }
-			    ],
-			    "filterType": "AND"
-				}; // Object | ContactListFilter
-
-
-
-			 outboundApi.postOutboundContactlistfiltersPreview(body)
-			   .then((data) => {
-
-
-     ch = ch + "<table class='tabla-alternada'>"
-		 ch = ch + "<tr>"
-
-        claves.forEach (clave =>
-		    {
-		    	ch = ch + "<td>" + clave + "</td>"
-     		});
-     ch = ch + "</tr>"
-
-		 ch = ch + "<tr>"
-
-        claves.forEach (clave =>
-		    {
-		    	ch = ch + "<td>" + clave + "</td>"
-     		});
-     ch = ch + "</tr>"
-
-		 ch = ch + "<tr>"
-
-        claves.forEach (clave =>
-		    {
-		    	ch = ch + "<td>" + clave + "</td>"
-     		});
-     ch = ch + "</tr>"
-
-
-
-
-		 ch = ch + "</table>"
-
-
-
-/*           for (let i = 0; i < data.preview.length; i++) {
-  						 console.log(data.preview[i].id);
-							 console.log(data.preview[i].data.Nombre);
-							 console.log(data.preview[i].data.tel1);
-						    ch = ch + data.preview[i].id + "<br>";
-						 }
-
-	*/
-						 ch = ch + '</center>'
-
-//						 console.log(ch);
-
-       document.getElementById("right").innerHTML = ch;
 
 
 			   })
