@@ -74,14 +74,15 @@ outboundApi.getOutboundContactlistsDivisionview(Campaign.contactList.id, opts)
 			 "filterType": "AND"
 		 }; // Object | ContactListFilter
 
-		console.log (claves);
-	 	console.log ('Columna Tel = ' + columna_tel);
-	 	console.log ('Campaign.contactList.id = ' + Campaign.contactList.id);
+//		console.log (claves);
+//	 	console.log ('Columna Tel = ' + columna_tel);
+//	 	console.log ('Campaign.contactList.id = ' + Campaign.contactList.id);
 
 
 		outboundApi.postOutboundContactlistfiltersPreview(body)
 			.then((data) => {
 
+		console.log (data);
 
 	ch = ch + "<table class='tabla-alternada'>"
 	ch = ch + "<tr>"
@@ -92,7 +93,10 @@ outboundApi.getOutboundContactlistsDivisionview(Campaign.contactList.id, opts)
 		 });
 	ch = ch + "</tr>"
 
+
+
 	ch = ch + "</table>"
+
 	ch = ch + '</center>'
 
 //						 console.log(ch);
