@@ -1,6 +1,7 @@
 var usersApi;
 var _me = {};
 var tableRow = "";
+var columna_tel = "";
 
 const platformClient = require('platformClient');
 
