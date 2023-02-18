@@ -6,9 +6,10 @@ var claves = {};
 
 const platformClient = require('platformClient');
 
-function updateRight(NombreCampana) {
-
-	let opts = {
+function updateRight(NombreCampana)
+{
+	let opts =
+	{
 		'pageSize': 100, // Number | Page size. The max that will be returned is 100.
 		'pageNumber': 1, // Number | Page number
     'name': NombreCampana, // String | Name
@@ -16,12 +17,12 @@ function updateRight(NombreCampana) {
 
   let outboundApi = new platformClient.OutboundApi();
   outboundApi.getOutboundCampaigns(opts)
-	.then((data) => {
+	.then((data) =>
+	{
 
       Campaign = data.entities[0];
-	//		console.log (data.entities[0]);
 
-ch = ""
+       ch = ""
 
 			 ch = '<center><b>   Nombre de La Campaña: </b>' + Campaign.name   + '</center><p>'
 			 ch = ch + '<center><b>   Nombre de La Calling List: </b>' + Campaign.contactList.name  + '</center>'
@@ -93,9 +94,9 @@ outboundApi.getOutboundContactlistsDivisionview(Campaign.contactList.id, opts)
 		 });
 	ch = ch + "</tr>"
 
-    data.forEach (registro =>
+    data.preview.forEach (registro =>
 			{
-            registro.data.forEach (campo =>
+            registro.preview.data.forEach (campo =>
 							{
                      console.log (campo);
 
