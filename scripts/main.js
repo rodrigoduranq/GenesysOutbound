@@ -58,7 +58,7 @@ outboundApi.getOutboundContactlistsDivisionview(Campaign.contactList.id, opts)
 								{
 									 "column": columna_tel,
 									 "columnType": "alphabetic",
-									 "operator": "LESS_THAN_EQUALS",   /// TODOS LOS REGISTROS
+									 "operator": "EQUALS",   /// TODOS LOS REGISTROS
 									 "value": "0",
 									 "range": {
 											"min": "",
