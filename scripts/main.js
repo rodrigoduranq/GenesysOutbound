@@ -76,8 +76,8 @@ outboundApi.getOutboundContactlistsDivisionview(Campaign.contactList.id, opts)
 		 }; // Object | ContactListFilter
 
 //		console.log (claves);
-//	 	console.log ('Columna Tel = ' + columna_tel);
-//	 	console.log ('Campaign.contactList.id = ' + Campaign.contactList.id);
+	 	console.log ('Columna Tel = ' + columna_tel);
+	 	console.log ('Campaign.contactList.id = ' + Campaign.contactList.id);
 
 
 		outboundApi.postOutboundContactlistfiltersPreview(body)
