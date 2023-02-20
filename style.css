@@ -63,7 +63,7 @@ html, body, div, span, p {
 
 
 	      .left {
-					width: 300px;
+					width: 350px;
 			    height: 100vh;
 			    float: left;
 			    overflow-y: auto;
@@ -77,7 +77,7 @@ html, body, div, span, p {
 	        height: 100%;
 	        float: left;
 					margin-left: 10px;
-					overflow-x: auto; /* Agregar scroll horizontal en caso de ser necesario */
+/*					overflow-x: auto; /* Agregar scroll horizontal en caso de ser necesario */
 	      }
 
 
