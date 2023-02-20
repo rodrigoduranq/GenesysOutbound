@@ -69,6 +69,10 @@ html, body, div, span, p {
 			    overflow-y: auto;
 	      }
 
+				.left::-webkit-scrollbar {
+				  display: none;
+				}
+				
 	      .right {
 					width: 70%;
 	        height: 100%;
