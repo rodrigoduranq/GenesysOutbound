@@ -118,6 +118,7 @@ outboundApi.getOutboundContactlistsDivisionview(Campaign.contactList.id, opts)
                 }
     ch = ch + "</tr>"
 		});
+	});
 
 
 /*
