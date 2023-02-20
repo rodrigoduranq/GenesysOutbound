@@ -87,13 +87,13 @@ outboundApi.getOutboundContactlistsDivisionview(Campaign.contactList.id, opts)
 		console.log (data);
 
 	ch = ch + "<table class='tabla-alternada'>"
-	ch = ch + "<tr>"
+	ch = ch + "<thead><tr>"
 
 		 claves.forEach (clave =>
 		 {
 			 ch = ch + "<td>" + clave + "</td>"
 		 });
-	ch = ch + "</tr>"
+	ch = ch + "</tr></thead>"
 
 
 	data.preview.forEach (registro =>
