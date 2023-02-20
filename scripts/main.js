@@ -100,10 +100,8 @@ outboundApi.getOutboundContactlistsDivisionview(Campaign.contactList.id, opts)
 {
 	      console.log ('Duran');
 
-        registro.data.forEach (campo  =>
-					{
-						console.log (campo);
-R					});
+				console.log (registro.data);
+
 		});
 
 
