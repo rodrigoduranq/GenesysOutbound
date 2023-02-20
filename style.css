@@ -63,7 +63,7 @@ html, body, div, span, p {
 
 
 	      .left {
-					width: 25%;
+					width: 100px;
 			    height: 100vh;
 			    float: left;
 			    overflow-y: auto;
@@ -74,7 +74,6 @@ html, body, div, span, p {
 				}
 
 	      .right {
-					width: 70%;
 	        height: 100%;
 	        float: left;
 					margin-left: 10px;
