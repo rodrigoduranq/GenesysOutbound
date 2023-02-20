@@ -98,12 +98,12 @@ outboundApi.getOutboundContactlistsDivisionview(Campaign.contactList.id, opts)
 
 	data.preview.forEach (registro =>
 {
-	      console.log ('rodro');
+	      console.log ('Duran');
 
-        registro.data.ForEach (campo  =>
+        registro.data.forEach (campo  =>
 					{
 						console.log (campo);
-					});
+R					});
 		});
 
 
