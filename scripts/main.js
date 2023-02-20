@@ -98,17 +98,25 @@ outboundApi.getOutboundContactlistsDivisionview(Campaign.contactList.id, opts)
 
 	data.preview.forEach (registro =>
 {
-	      console.log ('Duran');
+
+     ch = ch + "<tr>"
 
 				console.log (registro.data);
 
 
 				for (let key in registro.data) {
+ch = ch + "<td>"
              const llave = key;
              const valor = registro.data[key];
          console.log(`La clave es: ${llave} y el valor es: ${valor}`);
   // Aquí puedes utilizar las variables llave y valor como desees
+
+	ch = ch + "Valor </td>"
+
 }
+
+
+ch = ch + "</tr>"
 
 		});
 
