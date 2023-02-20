@@ -78,13 +78,13 @@ html, body, div, span, p {
 	        height: 100%;
 	        float: left;
 					margin-left: 10px;
+					overflow-x: auto; /* Agregar scroll horizontal en caso de ser necesario */
 	      }
 
 
 				.tabla-alternada {
 				  width: 100%;
 				  border-collapse: collapse;
- 				  overflow-x: auto; /* Agregar scroll horizontal en caso de ser necesario */
 				}
 
 				.tabla-alternada th,
