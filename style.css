@@ -67,7 +67,6 @@ html, body, div, span, p {
 			    height: 100vh;
 			    float: left;
 			    overflow-y: auto;
-					margin-right: 10px;
 	      }
 
 				.left::-webkit-scrollbar {

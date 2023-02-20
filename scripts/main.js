@@ -100,16 +100,10 @@ outboundApi.getOutboundContactlistsDivisionview(Campaign.contactList.id, opts)
 {
 
      ch = ch + "<tr>"
-
-				console.log (registro.data);
-
-
-claves.forEach (clave =>)
-
-ch = ch + "<td>"
-
-
-			       	for (let key in registro.data) {
+		 console.log (registro.data);
+     claves.forEach (clave =>
+     ch = ch + "<td>"
+	       	for (let key in registro.data) {
                   const llave = key;
                  const valor = registro.data[key];
 //                  console.log(`La clave es: ${llave} y el valor es: ${valor}`);
@@ -117,7 +111,6 @@ ch = ch + "<td>"
 									if (llave == clave) {
 									  elvalor = valor;
 									}
-
 									ch = ch + "Valor "+elvalor +"</td>"
 }
 
