@@ -76,7 +76,7 @@ html, body, div, span, p {
 	      .right {
 	        height: 100%;
 	        float: left;
-/*          margin-left: 350px;  */
+          margin-left: 10px;
 /*					overflow-x: auto; /* Agregar scroll horizontal en caso de ser necesario */
 	      }
 
