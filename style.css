@@ -84,6 +84,7 @@ html, body, div, span, p {
 				.tabla-alternada {
 				  width: 100%;
 				  border-collapse: collapse;
+ 				  overflow-x: auto; /* Agregar scroll horizontal en caso de ser necesario */
 				}
 
 				.tabla-alternada th,
@@ -99,24 +100,4 @@ html, body, div, span, p {
 
 				.tabla-alternada tr:nth-child(even) {
 				  background-color: #f2f2f2;
-				}
-
-
-
-				.tabla-minimalista {
-				  width: 100%;
-				  border: 1px solid #ddd;
-				  border-collapse: collapse;
-				}
-
-				.tabla-minimalista th,
-				.tabla-minimalista td {
-				  border: 1px solid #ddd;
-				  padding: 8px;
-				  text-align: left;
-				}
-
-				.tabla-minimalista th {
-				  background-color: #f2f2f2;
-				  color: #333;
 				}
