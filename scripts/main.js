@@ -113,11 +113,11 @@ outboundApi.getOutboundContactlistsDivisionview(Campaign.contactList.id, opts)
 									if (llave == clave) {
 									  elvalor = valor;
 									}
-									ch = ch + "Valor "+elvalor +"</td>"
-
                 }
-    ch = ch + "</tr>"
+								ch = ch +elvalor +"</td>"
+
 		});
+		ch = ch + "</tr>"
 	});
 
 
