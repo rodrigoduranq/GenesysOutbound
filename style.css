@@ -64,9 +64,9 @@ html, body, div, span, p {
 
 	      .left {
 					width: 30%;
-	        height: 100%;
-	        float: left;
-	        overflow: auto;
+			    height: 100vh;
+			    float: left;
+			    overflow-y: auto;
 	      }
 
 	      .right {
@@ -74,11 +74,6 @@ html, body, div, span, p {
 	        height: 100%;
 	        float: left;
 	      }
-
-
-
-
-
 
 
 				.tabla-alternada {
