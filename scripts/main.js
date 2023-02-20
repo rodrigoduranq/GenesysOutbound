@@ -101,7 +101,9 @@ outboundApi.getOutboundContactlistsDivisionview(Campaign.contactList.id, opts)
 
      ch = ch + "<tr>"
 		 console.log (registro.data);
-     claves.forEach (clave =>
+
+		 claves.forEach (clave =>
+			 {
      ch = ch + "<td>"
 	       	for (let key in registro.data) {
                   const llave = key;
@@ -112,13 +114,9 @@ outboundApi.getOutboundContactlistsDivisionview(Campaign.contactList.id, opts)
 									  elvalor = valor;
 									}
 									ch = ch + "Valor "+elvalor +"</td>"
-}
 
-
-
-
-ch = ch + "</tr>"
-
+                }
+    ch = ch + "</tr>"
 		});
 
 
