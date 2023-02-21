@@ -64,9 +64,10 @@ html, body, div, span, p {
 
 	      .left {
 					width: 350px;
-			    height: 100vh;
+			    flex: 1;
+					height: 100vh;
 			    float: left;
-			    overflow: auto;
+			    overflow-y: scroll;
 	      }
 
 				.left::-webkit-scrollbar {
@@ -74,10 +75,9 @@ html, body, div, span, p {
 				}
 
 	      .right {
-	        height: 100%;
-	        float: left;
-          margin-left: 10px;
-					overflow-x: auto;	
+					flex: 2;
+          margin-left: 20px;
+					overflow-x: auto;
 /*					overflow-x: auto; /* Agregar scroll horizontal en caso de ser necesario */
 	      }
 
