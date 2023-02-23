@@ -25,7 +25,7 @@ function updateRight(NombreCampana)
        ch = ""
 
 			 ch = '<b>   Nombre de La Campaña: </b>' + Campaign.name   + '<p>'
-			 ch = ch + '<b>   Nombre de La Calling List: </b>' + Campaign.contactList.name + '<p>'
+			 ch = ch + '<b>   Nombre de La Calling List: </b>' + Campaign.contactList.name + '<p><p>'
 
 
 
