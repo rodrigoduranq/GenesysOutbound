@@ -22,7 +22,7 @@ html, body, div, span, p {
 
 
 
-	      .left {
+	      .left_class {
 					width: 350px;
 			    flex: 1;
 					height: 100vh;
@@ -30,11 +30,11 @@ html, body, div, span, p {
 			    overflow-y: scroll;
 	      }
 
-				.left::-webkit-scrollbar {
+				.left_class::-webkit-scrollbar {
 				  display: none;
 				}
 
-	      .right {
+	      .right_class {
 					flex: 2;
           margin-left: 370px;
 					overflow-x: auto;
