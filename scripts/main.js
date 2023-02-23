@@ -141,7 +141,7 @@ outboundApi.getOutboundContactlistsDivisionview(Campaign.contactList.id, opts)
 		ch = ch + "</tr>"
 	});
 
-	$('#rodro').append("DURAN QUEZADA");
+	$('#rodro').html("DURAN QUEZADA");
 
 /*
     data.preview.forEach (registro =>
@@ -239,7 +239,7 @@ $(document).ready(function() {
 														'<td><button id="' + Campaign.id + '-button" class="elButton btn btn-default" onclick="updateRight(\'' + Campaign.name + '\')">MOSTRAR</button></td>' +   /// AGARRAR REFERENCIA DE LAS COLAS PARA ONCLICK
 													'</tr>';
 					    });
-						 $('#Campanas').append(tableRow);
+						 $('#Campanas').html(tableRow);
 
 					  });
 			});
