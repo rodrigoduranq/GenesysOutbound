@@ -3,6 +3,7 @@ var _me = {};
 var tableRow = "";
 var columna_tel = "";
 var claves = {};
+var cdato = {};
 
 const platformClient = require('platformClient');
 
@@ -35,6 +36,19 @@ ch = ch + '	       <span class="mi-checkbox-span"></span>'
 ch = ch + '	       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Iniciada' + Campaign.name
 ch = ch + '	     </label>'
 
+
+
+
+apiInstance.getOutboundCampaign(Campaign.Id)
+  .then((cdato) => {
+    console.log(`getOutboundCampaign success! data: ${JSON.stringify(data, null, 2)}`);
+		console.log ('iniciada' : cdato.campaignStatus);
+
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getOutboundCampaign');
+    console.error(err);
+  });
 
 
 
