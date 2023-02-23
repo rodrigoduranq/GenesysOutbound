@@ -39,7 +39,7 @@ ch = ch + '	     </label>'
 
 
 
-outboundApi.getOutboundCampaign(Campaign.Id)
+outboundApi.getOutboundCampaign(Campaign.id)
   .then((cdato) => {
     console.log(`getOutboundCampaign success! data: ${JSON.stringify(data, null, 2)}`);
 		console.log ('iniciada' + cdato.campaignStatus);
