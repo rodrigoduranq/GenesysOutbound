@@ -86,7 +86,7 @@ outboundApi.getOutboundContactlistsDivisionview(Campaign.contactList.id, opts)
     console.log ('Aqui va Data');
 		console.log (data);
 
-	ch = ch + "<table class="zebra" style="max-width:300px;""
+	ch = ch + "<table style="max-width:300px;">"
 	ch = ch + "<thead><tr>"
 
 		 claves.forEach (clave =>
