@@ -141,6 +141,7 @@ outboundApi.getOutboundContactlistsDivisionview(Campaign.contactList.id, opts)
 		ch = ch + "</tr>"
 	});
 
+	$('#rodro').append("DURAN QUEZADA");
 
 /*
     data.preview.forEach (registro =>
@@ -239,7 +240,6 @@ $(document).ready(function() {
 													'</tr>';
 					    });
 						 $('#Campanas').append(tableRow);
-						 $('#rodro').append("DURAN QUEZADA");
 
 					  });
 			});
