@@ -36,7 +36,7 @@ html, body, div, span, p {
 
 	      .right {
 					flex: 2;
-          margin-left: 30px;
+          margin-left: 370px;
 					overflow-x: auto;
 /*					overflow-x: auto; /* Agregar scroll horizontal en caso de ser necesario */
 	      }
