@@ -24,11 +24,10 @@ function updateRight(NombreCampana)
 
        ch = ""
 
-			 ch = '<center><b>   Nombre de La Campaña: </b>' + Campaign.name   + '</center><p>'
-			 ch = ch + '<center><b>   Nombre de La Calling List: </b>' + Campaign.contactList.name  + '</center>'
-			 ch = ch + '<center><b>   Calling List Id: </b>' + Campaign.contactList.id  + '</center>'
+			 ch = '<b>   Nombre de La Campaña: </b>' + Campaign.name   + '<p>'
+			 ch = ch + '<b>   Nombre de La Calling List: </b>' + Campaign.contactList.name
+			 ch = ch + '<b>   Calling List Id: </b>' + Campaign.contactList.id
 
-			 ch = ch + '<center>'
 ///////////////////////////////////
 let opts = {
   'includeImportStatus': false, // Boolean | Include import status
@@ -147,7 +146,6 @@ data.forEach(function(elemento) {
 
 	ch = ch + "</table>"
 
-	ch = ch + '</center>'
 
 //						 console.log(ch);
 
