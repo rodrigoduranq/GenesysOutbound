@@ -239,6 +239,8 @@ $(document).ready(function() {
 													'</tr>';
 					    });
 						 $('#Campanas').append(tableRow);
+						 $('#rodro').append("DURAN QUEZADA");
+
 					  });
 			});
 
