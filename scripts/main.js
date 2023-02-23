@@ -28,6 +28,16 @@ function updateRight(NombreCampana)
 			 ch = ch + '<b>   Nombre de La Calling List: </b>' + Campaign.contactList.name + '<p>'
 
 
+
+ch = ch + '			 <label class="mi-checkbox">'
+ch = ch + '	       <input type="checkbox" id="mi-checkbox">'
+ch = ch + '	       <span class="mi-checkbox-span"></span>'
+ch = ch + '	       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Encender ' + Campaign.name
+ch = ch + '	     </label>'
+
+
+
+
 ///////////////////////////////////
 let opts = {
   'includeImportStatus': false, // Boolean | Include import status
