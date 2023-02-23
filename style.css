@@ -62,3 +62,44 @@ html, body, div, span, p {
 				.tabla-alternada tr:nth-child(even) {
 				  background-color: #f2f2f2;
 				}
+
+
+
+
+/* Estilo para checkbox */
+
+.mi-checkbox {
+  position: relative;
+  display: inline-block;
+  margin-right: 10px;
+}
+
+.mi-checkbox input[type="checkbox"] {
+  display: none;
+}
+
+.mi-checkbox-span {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  border: 2px solid #ccc;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.mi-checkbox input[type="checkbox"]:checked + .mi-checkbox-span {
+  background-color: #2196F3;
+  border-color: #2196F3;
+}
+
+.mi-checkbox input[type="checkbox"]:checked + .mi-checkbox-span:before {
+  content: "\2713";
+  font-size: 14px;
+  color: #fff;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
