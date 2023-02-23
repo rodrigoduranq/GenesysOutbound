@@ -27,9 +27,10 @@ function updateRight(NombreCampana)
 
        ch = ""
 
-			 ch = '<b>   Naaaaaaaaaaaaombre de La Campaña: </b>' + Campaign.name   + '<p>'
+	/*		 ch = '<b>   Naaaaaaaaaaaaombre de La Campaña: </b>' + Campaign.name   + '<p>'
 			 ch = ch + '<b>   Nombre de La Calling List: </b>' + Campaign.contactList.name + '<p><p>'
 
+*/
 	$('#N_Campana').html(Campaign.name);
 
 
