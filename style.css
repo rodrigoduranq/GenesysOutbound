@@ -20,46 +20,6 @@ html, body, div, span, p {
 }
 
 
-      nav  {
-        display: block; /* Hace que los enlaces ocupen todo el ancho del elemento */
-        padding: 10px; /* Espacio interno */
-        text-decoration: none; /* Elimina la decoración del enlace */
-        color: #333; /* Color del texto */
-      }
-
-
-      nav ul {
-        list-style-type: none; /* Elimina los puntos de la lista */
-        padding: 0; /* Elimina los espacios entre los elementos */
-        margin: 0; /* Elimina los márgenes */
-      }
-
-      nav li {
-        border-bottom: 1px solid #ccc; /* Agrega un borde debajo de cada elemento */
-      }
-
-      nav a {
-        display: block; /* Hace que los enlaces ocupen todo el ancho del elemento */
-        padding: 10px; /* Espacio interno */
-        text-decoration: none; /* Elimina la decoración del enlace */
-        color: #333; /* Color del texto */
-      }
-
-      nav a:hover {
-        background-color: #ddd; /* Color de fondo al pasar el mouse */
-      }
-
-      /* Estilos para el submenú */
-      nav ul ul {
-        background-color: #f0f0f0; /* Color de fondo del submenú */
-        display: none; /* Oculta el submenú por defecto */
-      }
-
-      nav ul li:hover > ul {
-        display: block; /* Muestra el submenú al pasar el mouse */
-      }
-
-
 
 
 	      .left {
