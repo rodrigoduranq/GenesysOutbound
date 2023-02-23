@@ -32,7 +32,7 @@ function updateRight(NombreCampana)
 ch = ch + '			 <label class="mi-checkbox">'
 ch = ch + '	       <input type="checkbox" id="mi-checkbox">'
 ch = ch + '	       <span class="mi-checkbox-span"></span>'
-ch = ch + '	       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Encender ' + Campaign.name
+ch = ch + '	       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Iniciada' + Campaign.name
 ch = ch + '	     </label>'
 
 
