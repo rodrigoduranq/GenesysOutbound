@@ -9,11 +9,6 @@ const platformClient = require('platformClient');
 
 
 
-
-
-
-
-
 function updateRight(NombreCampana)
 {
 	let opts =
@@ -143,37 +138,15 @@ outboundApi.getOutboundContactlistsDivisionview(Campaign.contactList.id, opts)
 
 	$('#rodro').html("DURAN QUEZADA");
 
-/*
-    data.preview.forEach (registro =>
-			{
-            registro.preview.data.forEach (campo =>
-							{
-                     console.log (campo);
-
-							});
-			});
-
-/*
-
-// Recorremos cada elemento del array
-data.forEach(function(elemento) {
-  // Recorremos cada propiedad del objeto
-  Object.keys(elemento).forEach(function(clave) {
-    // Obtenemos el valor correspondiente a la clave
-    var valor = elemento[clave];
-    console.log(clave + ': ' + valor);
-  });
-});
-
-*/
 
 	ch = ch + "</table>"
 
 
 //						 console.log(ch);
 
-document.getElementById("right").innerHTML = ch;
+////   document.getElementById("right").innerHTML = ch;
 
+$('#right').html(ch);
 
   })
   .catch((err) => {
