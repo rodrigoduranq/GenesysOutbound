@@ -33,7 +33,7 @@ function updateRight(NombreCampana)
 ch = ch + '			 <label class="mi-checkbox">'
 ch = ch + '	       <input type="checkbox" id="mi-checkbox">'
 ch = ch + '	       <span class="mi-checkbox-span"></span>'
-ch = ch + '	       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Iniciada' + Campaign.name
+ch = ch + '	       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Iniciada'
 ch = ch + '	     </label>'
 
 
@@ -42,7 +42,7 @@ ch = ch + '	     </label>'
 outboundApi.getOutboundCampaign(Campaign.id)
   .then((cdato) => {
     console.log(`getOutboundCampaign success! data: ${JSON.stringify(data, null, 2)}`);
-		console.log ('iniciada' + cdato.campaignStatus);
+		console.log ('Estatus de la campaña' + cdato.campaignStatus);
 
   })
   .catch((err) => {
