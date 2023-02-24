@@ -39,6 +39,7 @@ outboundApi.getOutboundCampaign(Campaign.id)
   /*  console.log(`getOutboundCampaign success! data: ${JSON.stringify(data, null, 2)}`); */
 		console.log ('Estatus de la campaña' + cdato.campaignStatus);
 
+	$('#N_Status').html(cdato.campaignStatus);
 
 		if (cdato.campaignStatus == "off") {
 			DesactivaBoton();
