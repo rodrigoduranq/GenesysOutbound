@@ -33,6 +33,7 @@ function updateRight(NombreCampana)
 
 
 
+
 outboundApi.getOutboundCampaign(Campaign.id)
   .then((cdato) => {
     console.log(`getOutboundCampaign success! data: ${JSON.stringify(data, null, 2)}`);
@@ -44,6 +45,12 @@ outboundApi.getOutboundCampaign(Campaign.id)
     console.error(err);
   });
 
+
+	if (cdato.campaignStatus == "off") {
+		miFuncionDesactivado();
+	} else {
+		miFuncionActivado();
+	}
 
 
 ///////////////////////////////////
