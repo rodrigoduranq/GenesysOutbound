@@ -79,8 +79,8 @@ html, body, div, span, p {
 }
 
 .mi-checkbox-span {
-  display: slider;
-  width: 60px;
+  display: inline-block;
+  width: 20px;
   height: 20px;
   border-radius: 50%;
   border: 2px solid #ccc;
