@@ -107,8 +107,8 @@ outboundApi.getOutboundContactlistsDivisionview(Campaign.contactList.id, opts)
 		outboundApi.postOutboundContactlistfiltersPreview(body)
 			.then((data) => {
 
-    console.log ('Aqui va Data');
-		console.log (data);
+/*    console.log ('Aqui va Data');
+		console.log (data); */
 
 	ch = ch + "<table class='tabla-alternada'>"
 	ch = ch + "<thead><tr>"
