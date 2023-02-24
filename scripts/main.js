@@ -47,9 +47,9 @@ outboundApi.getOutboundCampaign(Campaign.id)
 
 
 	if (cdato.campaignStatus == "off") {
-		miFuncionDesactivado();
+		DesactivaBoton();
 	} else {
-		miFuncionActivado();
+		ActivaBoton();
 	}
 
 
