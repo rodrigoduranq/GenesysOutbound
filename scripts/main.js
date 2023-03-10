@@ -9,9 +9,6 @@ const platformClient = require('platformClient');
 
 
 
-
-
-
 function Borrar_Registro() {
   let opciones = document.getElementsByName("fila");
   for (let i = 0; i < opciones.length; i++) {
