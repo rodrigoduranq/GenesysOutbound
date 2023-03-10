@@ -4,11 +4,9 @@ var tableRow = "";
 var columna_tel = "";
 var claves = {};
 var cdato = {};
-var primeraCampana = ""
+var primeraCampana = "";
 
 const platformClient = require('platformClient');
-
-
 
 function Borrar_Registro() {
   let opciones = document.getElementsByName("fila");
@@ -28,12 +26,8 @@ function miFuncion() {
 }
 
 
-
-
 function updateRight(NombreCampana)
 {
-
-
 	let opts =
 	{
 		'pageSize': 100, // Number | Page size. The max that will be returned is 100.
@@ -52,8 +46,6 @@ function updateRight(NombreCampana)
 
 	$('#N_Campana').html(Campaign.name);
 	$('#N_CallingList').html(Campaign.contactList.name);
-
-
 
 
 
@@ -264,7 +256,7 @@ $(document).ready(function() {
 
 										$.each(data.entities, function(index, Campaign) {
 
-											if primeraCampana == "" then
+											if (primeraCampana == "") then
 											{
 										    primeraCampana = Campaign.name;
 											};
