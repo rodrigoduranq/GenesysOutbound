@@ -21,10 +21,6 @@ function Borrar_Registro() {
 }
 
 
-function miFuncion() {
-  alert("La página se ha cargado completamente");
-}
-
 
 function updateRight(NombreCampana)
 {
