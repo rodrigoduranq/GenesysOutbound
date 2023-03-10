@@ -149,7 +149,18 @@ outboundApi.getOutboundContactlistsDivisionview(Campaign.contactList.id, opts)
 		ch = ch + "</tr>"
 	});
 
-	$('#rodro').html("DURAN QUEZADA");
+  if (true)
+	{
+		ch = ch + "<tr>"
+		claves.forEach (clave =>
+			{
+
+				ch = ch + "<td><input type='text' id='name' name='name' required minlength='4' maxlength='8' size='10'></td>"
+			});
+
+		ch = ch + "</tr>"
+
+	}
 
 
 	ch = ch + "</table>"
