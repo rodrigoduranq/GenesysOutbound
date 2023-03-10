@@ -28,6 +28,12 @@ function miFuncion() {
 
 function updateRight(NombreCampana)
 {
+
+	if (NombreCampana == "") {
+	   	NombreCampana = primeraCampana
+		}
+
+
 	let opts =
 	{
 		'pageSize': 100, // Number | Page size. The max that will be returned is 100.
