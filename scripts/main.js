@@ -124,6 +124,7 @@ outboundApi.getOutboundContactlistsDivisionview(Campaign.contactList.id, opts)
 		 });
 	ch = ch + "</tr></thead>"
 
+	idfila = 0
 
 	data.preview.forEach (registro =>
 {
@@ -131,8 +132,13 @@ outboundApi.getOutboundContactlistsDivisionview(Campaign.contactList.id, opts)
      ch = ch + "<tr>"
 		 console.log (registro.data);
 
+		 idfila = idfila + 1
+	   ch = ch  + "<td><input type='radio' name='fila' value='" + idfila +  "'></td>"
+
+
 		 claves.forEach (clave =>
 			 {
+
      ch = ch + "<td>"
 	       	for (let key in registro.data) {
                   const llave = key;
