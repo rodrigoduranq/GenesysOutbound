@@ -132,7 +132,8 @@ outboundApi.getOutboundContactlistsDivisionview(Campaign.contactList.id, opts)
 {
 
      ch = ch + "<tr>"
-		 console.log (registro.data);
+		 console.log (registro);
+
 
 		 idfila = idfila + 1
 	   ch = ch  + "<td><input type='radio' name='fila' value='" + idfila +  "'></td>"
