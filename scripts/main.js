@@ -27,16 +27,11 @@ function Borrar_Registro() {
 
 function updateRight(NombreCampana)
 {
-  if primeraCampana = "" then
-	{
-    primeraCampana = NombreCampana;
-	};
 
 if NombreCampana = "" then
 {
-	NombreCampana = primeraCampana;
+  NombreCampana = primeraCampana
 };
-
 
 	let opts =
 	{
@@ -267,6 +262,11 @@ $(document).ready(function() {
 
 
 										$.each(data.entities, function(index, Campaign) {
+
+											if primeraCampana = "" then
+											{
+										    primeraCampana = Campaign.name;
+											};
 
 												tableRow = tableRow + '<tr id="' + Campaign.id + '">' +
 														'<td><b>' + Campaign.name + '</b><p>' + Campaign.contactList.name + '</td>' +
