@@ -4,6 +4,7 @@ var tableRow = "";
 var columna_tel = "";
 var claves = {};
 var cdato = {};
+var primeraCampana = ""
 
 const platformClient = require('platformClient');
 
@@ -26,6 +27,17 @@ function Borrar_Registro() {
 
 function updateRight(NombreCampana)
 {
+  if primeraCampana = "" then
+	{
+    primeraCampana = NombreCampana;
+	};
+
+if NombreCampana = "" then
+{
+	NombreCampana = primeraCampana;
+};
+
+
 	let opts =
 	{
 		'pageSize': 100, // Number | Page size. The max that will be returned is 100.
