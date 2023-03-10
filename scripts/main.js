@@ -28,10 +28,6 @@ function Borrar_Registro() {
 function updateRight(NombreCampana)
 {
 
-if NombreCampana = "" then
-{
-  NombreCampana = primeraCampana
-};
 
 	let opts =
 	{
