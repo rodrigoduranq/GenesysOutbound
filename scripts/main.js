@@ -118,6 +118,8 @@ outboundApi.getOutboundContactlistsDivisionview(Campaign.contactList.id, opts)
 	ch = ch + "<table class='tabla-alternada'>"
 	ch = ch + "<thead><tr>"
 
+	ch = ch  + "<td></td>"
+
 		 claves.forEach (clave =>
 		 {
 			 ch = ch + "<th>" + clave + "</th>"
