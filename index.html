@@ -85,18 +85,6 @@ function ActivaBoton() {
 }
 
 
-function Borrar_Registro() {
-  let opciones = document.getElementsByName("fila");
-  for (let i = 0; i < opciones.length; i++) {
-    if (opciones[i].checked) {
-      let id = opciones[i].value;
-      alert("La fila seleccionada tiene el ID " + id);
-      return;
-    }
-  }
-  alert("Debe seleccionar una fila");
-}
-
 
 </script>
 
