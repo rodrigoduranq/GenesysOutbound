@@ -264,7 +264,7 @@ $(document).ready(function() {
 
 										$.each(data.entities, function(index, Campaign) {
 
-											if primeraCampana = "" then
+											if primeraCampana == "" then
 											{
 										    primeraCampana = Campaign.name;
 											};
