@@ -7,6 +7,42 @@ var cdato = {};
 
 const platformClient = require('platformClient');
 
+const miCheckbox = document.getElementById("mi-checkbox");
+
+miCheckbox.addEventListener("change", function() {
+	if (miCheckbox.checked) {
+		miFuncionActivado();
+	} else {
+		miFuncionDesactivado();
+	}
+});
+
+function miFuncionActivado() {
+	console.log("El botón está activado");
+	// Aquí puedes agregar el código que se ejecutará cuando el botón esté activado
+}
+
+function miFuncionDesactivado() {
+	console.log("El botón está desactivado");
+	// Aquí puedes agregar el código que se ejecutará cuando el botón esté desactivado
+}
+
+function DesactivaBoton() {
+    miCheckbox.checked = false;
+}
+
+
+function ActivaBoton() {
+    miCheckbox.checked = true;
+}
+
+
+
+
+
+
+
+
 
 function Borrar_Registro() {
   let opciones = document.getElementsByName("fila");
