@@ -155,7 +155,7 @@ outboundApi.getOutboundContactlistsDivisionview(Campaign.contactList.id, opts)
 		claves.forEach (clave =>
 			{
 
-				ch = ch + "<td><input type='text' id='name' name='name' required minlength='4' maxlength='8' size='10'></td>"
+				ch = ch + "<td><input type='text' id='" + clave + "' name='"+ clave + "' required minlength='4' maxlength='8' size='10'></td>"
 			});
 
 		ch = ch + "</tr>"
