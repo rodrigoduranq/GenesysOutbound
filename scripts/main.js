@@ -84,6 +84,13 @@ function Borrar_Registro() {
 
 function Actualizar_Registro() {
     let opciones = document.getElementsByName("newrecord");
+		let opciones2 = document.getElementsByName("registros_nuevos");
+
+		let opciones3 = document.getElementsByTagName("newrecord");
+		let opciones4 = document.getElementsByTagName("registros_nuevos");
+
+		registros_nuevos
+
     for (let i = 0; i < opciones.length; i++) {
   /*      if (opciones[i].checked) {
             let id = opciones[i].value;
@@ -202,7 +209,7 @@ function updateRight(NombreCampana) {
                                 ch = ch + "</tr>"
                             });
                             if (true) {
-                                ch = ch + "<tr>"
+                                ch = ch + "<tr id = 'registros_nuevos' >"
                                 ch = ch + "<td></td>"
                                 claves.forEach(clave => {
                                     ch = ch + "<td><input type='text' id='newrecord' name='" + clave + "' required minlength='4' maxlength='8' size='10'></td>"
