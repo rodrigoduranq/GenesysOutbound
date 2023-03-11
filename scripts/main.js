@@ -190,7 +190,7 @@ function updateRight(NombreCampana) {
                                 ch = ch + "<tr>"
                                 ch = ch + "<td></td>"
                                 claves.forEach(clave => {
-                                    ch = ch + "<td><input type='text' id='" + newrecord + "' name='" + clave + "' required minlength='4' maxlength='8' size='10'></td>"
+                                    ch = ch + "<td><input type='text' id='newrecord' name='" + clave + "' required minlength='4' maxlength='8' size='10'></td>"
                                 });
                                 ch = ch + "</tr>"
                             }
