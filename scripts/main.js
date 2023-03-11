@@ -57,7 +57,7 @@ function updateRight(NombreCampana)
 	$('#N_Campana').html(Campaign.name);
 	$('#N_CallingList').html(Campaign.contactList.name);
 
-   idcampana = campaign.id
+   idcampana = Campaign.id;
 
 outboundApi.getOutboundCampaign(Campaign.id)
   .then((cdato) => {
