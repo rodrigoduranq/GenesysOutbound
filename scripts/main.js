@@ -23,7 +23,6 @@ apiInstance.deleteOutboundContactlistContact(contactListId, contactId)
   })
   .catch((err) => {
     console.log('There was a failure calling deleteOutboundContactlistContact');
-    console.error(err);
   });
 }
 
