@@ -33,8 +33,6 @@ function Borrar_Registro() {
   for (let i = 0; i < opciones.length; i++) {
     if (opciones[i].checked) {
       let id = opciones[i].value;
-      alert("La fila seleccionada tiene el ID " + id);
-			alert("La campana seleccionada tiene el ID " + idcampana);
 
       borra_registro (idcampana,id);
       updateRight (NombreCampana);
