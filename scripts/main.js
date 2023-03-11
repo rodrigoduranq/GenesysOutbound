@@ -6,6 +6,7 @@ var claves = {};
 var cdato = {};
 var primeraCampana = "";
 var idcallinglist = "";
+var G_CampaignName = "";
 
 const platformClient = require('platformClient');
 
@@ -35,7 +36,7 @@ function Borrar_Registro() {
       let id = opciones[i].value;
 
       borra_registro (idcallinglist,id);
-      updateRight (NombreCampana);
+      updateRight (G_CampaignName);
 
       return;
     }
@@ -47,6 +48,7 @@ function Borrar_Registro() {
 
 function updateRight(NombreCampana)
 {
+	G_CampaignName = NombreCampana;
 
 	if (NombreCampana == "") {
 	   	NombreCampana = primeraCampana
