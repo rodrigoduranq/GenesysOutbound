@@ -5,7 +5,7 @@ var columna_tel = "";
 var claves = {};
 var cdato = {};
 var primeraCampana = "";
-var idcampana = "";
+var idcallinglist = "";
 
 const platformClient = require('platformClient');
 
@@ -34,7 +34,7 @@ function Borrar_Registro() {
     if (opciones[i].checked) {
       let id = opciones[i].value;
 
-      borra_registro (idcampana,id);
+      borra_registro (idcallinglist,id);
       updateRight (NombreCampana);
 
       return;
@@ -72,7 +72,7 @@ function updateRight(NombreCampana)
 	$('#N_Campana').html(Campaign.name);
 	$('#N_CallingList').html(Campaign.contactList.name);
 
-   idcampana = Campaign.id;
+   idcallinglist = Campaign.contactList.id;
 
 outboundApi.getOutboundCampaign(Campaign.id)
   .then((cdato) => {
