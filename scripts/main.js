@@ -81,6 +81,21 @@ function Borrar_Registro() {
     alert("Debe seleccionar una fila");
 }
 
+
+function Actualizar_Registro() {
+    let opciones = document.getElementsByName("newrecord");
+    for (let i = 0; i < opciones.length; i++) {
+  /*      if (opciones[i].checked) {
+            let id = opciones[i].value;
+            borra_registro(idcallinglist, id);
+            updateRight(G_CampaignName);
+            return;
+        } */
+    }
+    alert("Debe seleccionar una fila");
+}
+
+
 function updateRight(NombreCampana) {
     G_CampaignName = NombreCampana;
     if (NombreCampana == "") {
