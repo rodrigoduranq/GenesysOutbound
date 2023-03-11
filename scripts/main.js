@@ -5,6 +5,7 @@ var columna_tel = "";
 var claves = {};
 var cdato = {};
 var primeraCampana = "";
+var idcampana = "";
 
 const platformClient = require('platformClient');
 
@@ -17,6 +18,10 @@ function Borrar_Registro() {
     if (opciones[i].checked) {
       let id = opciones[i].value;
       alert("La fila seleccionada tiene el ID " + id);
+			alert("La campana seleccionada tiene el ID " + id);
+
+
+
       return;
     }
   }
@@ -52,7 +57,7 @@ function updateRight(NombreCampana)
 	$('#N_Campana').html(Campaign.name);
 	$('#N_CallingList').html(Campaign.contactList.name);
 
-
+   idcampana = campaign.id
 
 outboundApi.getOutboundCampaign(Campaign.id)
   .then((cdato) => {
