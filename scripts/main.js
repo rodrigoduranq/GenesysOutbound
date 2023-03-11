@@ -9,6 +9,54 @@ var idcallinglist = "";
 var G_CampaignName = "";
 const platformClient = require('platformClient');
 
+
+/*    UPDATE RECORD
+
+let apiInstance = new platformClient.OutboundApi();
+
+let contactListId = "fb807af5-f92c-4185-89af-dc58738393a7"; // String | Contact List ID
+
+
+
+
+let body = [
+  {
+    "id": "",
+    "contactListId": contactListId,
+    "data": {
+
+        "clientId": "123456",
+        "name": "Juan Perez",
+        "phone": "555-1234"
+       },
+       "callable": true,
+      "phoneNumberStatus": {
+        "mobilePhone": {"callable": true},
+        "homePhone": {"callable": true}
+    }
+  }
+  ]; // Object | Contact
+let opts = {
+  'priority': true, // Boolean | Contact priority. True means the contact(s) will be dialed next; false means the contact will go to the end of the contact queue.
+  'clearSystemData': true, // Boolean | Clear system data. True means the system columns (attempts, callable status, etc) stored on the contact will be cleared if the contact already exists; false means they won't.
+  'doNotQueue': true // Boolean | Do not queue. True means that updated contacts will not have their positions in the queue altered, so contacts that have already been dialed will not be redialed. For new contacts, this parameter has no effect; False means that updated contacts will be re-queued, according to the 'priority' parameter.
+};
+
+apiInstance.postOutboundContactlistContacts(contactListId, body, opts)
+  .then((data) => {
+    console.log(`postOutboundContactlistContacts success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling postOutboundContactlistContacts');
+    console.error(err);
+  });
+
+*/
+
+
+
+
+
 function borra_registro(contactListId, contactId) {
     let apiInstance = new platformClient.OutboundApi();
     apiInstance.deleteOutboundContactlistContact(contactListId, contactId)
@@ -142,7 +190,7 @@ function updateRight(NombreCampana) {
                                 ch = ch + "<tr>"
                                 ch = ch + "<td></td>"
                                 claves.forEach(clave => {
-                                    ch = ch + "<td><input type='text' id='" + clave + "' name='" + clave + "' required minlength='4' maxlength='8' size='10'></td>"
+                                    ch = ch + "<td><input type='text' id='" + newrecord + "' name='" + clave + "' required minlength='4' maxlength='8' size='10'></td>"
                                 });
                                 ch = ch + "</tr>"
                             }
