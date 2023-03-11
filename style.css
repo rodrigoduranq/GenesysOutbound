@@ -103,15 +103,3 @@ html, body, div, span, p {
   left: 50%;
   transform: translate(-50%, -50%);
 }
-
-
-.btn-verde {
-  background-color: green;
-  color: white;
-  border: 2px solid green;
-  padding: 5px 10px;
-  font-size: 8px;
-  width: 50%;
-  height: 50%;
-  cursor: pointer;
-}
