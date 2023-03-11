@@ -11,6 +11,22 @@ const platformClient = require('platformClient');
 
 
 
+function borra_registro (contactListId,contactId)
+{
+  let apiInstance = new platformClient.OutboundApi();
+
+
+apiInstance.deleteOutboundContactlistContact(contactListId, contactId)
+  .then(() => {
+    console.log('deleteOutboundContactlistContact returned successfully.');
+  })
+  .catch((err) => {
+    console.log('There was a failure calling deleteOutboundContactlistContact');
+    console.error(err);
+  });
+}
+
+
 
 function Borrar_Registro() {
   let opciones = document.getElementsByName("fila");
@@ -20,7 +36,8 @@ function Borrar_Registro() {
       alert("La fila seleccionada tiene el ID " + id);
 			alert("La campana seleccionada tiene el ID " + idcampana);
 
-
+      borra_registro (idcampana,id);
+      updateRight (NombreCampana);
 
       return;
     }
