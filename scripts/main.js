@@ -83,22 +83,21 @@ function Borrar_Registro() {
 
 
 function Actualizar_Registro() {
-    let opciones = document.getElementsByName("newrecord");
-		let opciones2 = document.getElementsByName("registros_nuevos");
 
-		let opciones3 = document.getElementsByTagName("newrecord");
-		let opciones4 = document.getElementsByTagName("registros_nuevos");
+			var fila = document.getElementById("registros_nuevos");
+		  var inputs = fila.querySelectorAll("input");
+      var valores = [];
 
-		registros_nuevos
+			for (var i = 0; i < inputs.length; i++) {
+				valores.push(inputs[i].value);
+			}
 
-    for (let i = 0; i < opciones.length; i++) {
-  /*      if (opciones[i].checked) {
-            let id = opciones[i].value;
-            borra_registro(idcallinglist, id);
-            updateRight(G_CampaignName);
-            return;
-        } */
-    }
+			var datos = valores.join(", ");
+
+			console.log("Los datos son: " + datos);
+
+			return valores;
+
     alert("Debe seleccionar una fila");
 }
 
