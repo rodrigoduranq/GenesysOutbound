@@ -82,7 +82,7 @@ function Borrar_Registro() {
 }
 
 
-function Actualizar_Registro() {
+function Anadir_Registro() {
 
 			var fila = document.getElementById("registros_nuevos");
 		  var inputs = fila.querySelectorAll("input");
