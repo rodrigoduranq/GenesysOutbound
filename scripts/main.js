@@ -226,6 +226,7 @@ function updateRight(NombreCampana) {
                                 ch = ch + "</tr>"
                             });
                             if (true) {
+
                                 ch = ch + "<tr id = 'registros_nuevos' >"
                                 ch = ch + "<td></td>"
                                 claves.forEach(clave => {
