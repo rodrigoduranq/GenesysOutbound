@@ -89,7 +89,7 @@ function Actualizar_Registro() {
       var valores = [];
 
 			for (var i = 0; i < inputs.length; i++) {
-				valores.push(inputs[i].value);
+				valores.push(inputs[i].name + "=" + inputs[i].value);
 			}
 
 			var datos = valores.join(", ");
@@ -211,7 +211,7 @@ function updateRight(NombreCampana) {
                                 ch = ch + "<tr id = 'registros_nuevos' >"
                                 ch = ch + "<td></td>"
                                 claves.forEach(clave => {
-                                    ch = ch + "<td><input type='text' id='newrecord' name='" + clave + "' required minlength='4' maxlength='8' size='10'></td>"
+                                    ch = ch + "<td><input type='text' name='" + clave + "' required minlength='4' maxlength='8' size='10'></td>"
                                 });
                                 ch = ch + "</tr>"
                             }
