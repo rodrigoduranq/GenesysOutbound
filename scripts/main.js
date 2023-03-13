@@ -106,7 +106,7 @@ function Anadir_Registro() {
         'doNotQueue': true // Boolean | Do not queue. True means that updated contacts will not have their positions in the queue altered, so contacts that have already been dialed will not be redialed. For new contacts, this parameter has no effect; False means that updated contacts will be re-queued, according to the 'priority' parameter.
       };
 
-      apiInstance.postOutboundContactlistContacts(contactListId, body, opts)
+      apiInstance.postOutboundContactlistContacts(idcallinglist, body, opts)
         .then((data) => {
           console.log(`postOutboundContactlistContacts success! data: ${JSON.stringify(data, null, 2)}`);
         })
