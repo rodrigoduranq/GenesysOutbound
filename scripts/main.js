@@ -36,7 +36,7 @@ function Borrar_Registro() {
     alert("Debe seleccionar una fila");
 }
 
-function Add_Record{
+function Anadir_Registro2(){
   let apiInstance = new platformClient.OutboundApi();
 
   let contactListId = "fb807af5-f92c-4185-89af-dc58738393a7"; // String | Contact List ID
