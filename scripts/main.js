@@ -95,7 +95,7 @@ function Anadir_Registro() {
         ]; // Object | Contact
 
 			for (var i = 0; i < inputs.length; i++) {
-        body[0].data[inputs[i].name] = "inputs[i].value";
+        body[0].data[inputs[i].name] = inputs[i].value;
 			}
 
     return valores;
