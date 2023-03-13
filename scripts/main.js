@@ -95,7 +95,7 @@ function Anadir_Registro() {
     let body = [
       {
         "id": "",
-        "contactListId": contactListId,
+        "contactListId": idcallinglist,
         "data": {},
            "callable": true,
           "phoneNumberStatus": {
