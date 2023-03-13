@@ -80,6 +80,7 @@ function Anadir_Registro() {
 			var fila = document.getElementById("registros_nuevos");
 		  var inputs = fila.querySelectorAll("input");
       var valores = [];
+      let apiInstance = new platformClient.OutboundApi();
 
       let body = [
         {
@@ -98,9 +99,23 @@ function Anadir_Registro() {
         body[0].data[inputs[i].name] = inputs[i].value;
 			}
 
-    return valores;
 
-  alert("Debe seleccionar una fila");
+      let opts = {
+        'priority': true, // Boolean | Contact priority. True means the contact(s) will be dialed next; false means the contact will go to the end of the contact queue.
+        'clearSystemData': true, // Boolean | Clear system data. True means the system columns (attempts, callable status, etc) stored on the contact will be cleared if the contact already exists; false means they won't.
+        'doNotQueue': true // Boolean | Do not queue. True means that updated contacts will not have their positions in the queue altered, so contacts that have already been dialed will not be redialed. For new contacts, this parameter has no effect; False means that updated contacts will be re-queued, according to the 'priority' parameter.
+      };
+
+      apiInstance.postOutboundContactlistContacts(contactListId, body, opts)
+        .then((data) => {
+          console.log(`postOutboundContactlistContacts success! data: ${JSON.stringify(data, null, 2)}`);
+        })
+        .catch((err) => {
+          console.log('There was a failure calling postOutboundContactlistContacts');
+          console.error(err);
+        });
+
+    return valores;
 
 }
 
