@@ -81,32 +81,22 @@ function Anadir_Registro() {
 		  var inputs = fila.querySelectorAll("input");
       var valores = [];
 
-			for (var i = 0; i < inputs.length; i++) {
-				valores.push(inputs[i].name + "=" + inputs[i].value);
-			}
-
-			var datos = valores.join(", ");
-
-			console.log("Los datos son: " + datos);
-
-
-
-
-    let body = [
-      {
-        "id": "",
-        "contactListId": idcallinglist,
-        "data": {},
-           "callable": true,
-          "phoneNumberStatus": {
-            "mobilePhone": {"callable": true},
-            "homePhone": {"callable": true}
+      let body = [
+        {
+          "id": "",
+          "contactListId": idcallinglist,
+          "data": {},
+             "callable": true,
+            "phoneNumberStatus": {
+              "mobilePhone": {"callable": true},
+              "homePhone": {"callable": true}
+          }
         }
-      }
-      ]; // Object | Contact
+        ]; // Object | Contact
 
-    body[0].data["Rodro"] = "Duran";
-    body[0].data["Tere"] = "Rivera";
+			for (var i = 0; i < inputs.length; i++) {
+        body[0].data[inputs[i].name] = "inputs[i].value";
+			}
 
     return valores;
 
