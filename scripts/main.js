@@ -11,6 +11,10 @@ const platformClient = require('platformClient');
 
 
 
+function Exportar_Calling()
+{
+}
+
 
 function Delete_Record(contactListId, contactId) {
     let apiInstance = new platformClient.OutboundApi();
