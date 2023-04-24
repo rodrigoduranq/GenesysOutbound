@@ -10,17 +10,8 @@ var G_CampaignName = "";
 const platformClient = require('platformClient');
 
 
-
-function Exportar_Calling()
-{
-
-const requestp = require('request-promise');
-const platformClient = require('purecloud-platform-client-v2');
-const client = platformClient.ApiClient.instance;
-client.setEnvironment('Given environment');
-
 const exportContactList = function exportContactList(contactListId) {
-const outboundApi = new platformClient.OutboundApi();
+    const outboundApi = new platformClient.OutboundApi();
     outboundApi.getOutboundContactlistExport(contactListId, { download: 'false' })
         .then(res => {
             const downloadUri = res.uri;
@@ -43,6 +34,15 @@ const outboundApi = new platformClient.OutboundApi();
             } else {
             }
         });
+};
+
+
+
+function Exportar_Calling()
+{
+  let outboundApi = new platformClient.OutboundApi();
+  outboundApi.postOutboundContactlistExport(idcallinglist)
+      .then(() => exportContactList(idcallinglist));
 };
 
 const clientId = 'Given Client ID';
