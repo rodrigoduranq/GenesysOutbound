@@ -45,20 +45,8 @@ function Exportar_Calling()
       .then(() => exportContactList(idcallinglist));
 };
 
-const clientId = 'Given Client ID';
-const clientSecret = 'Given Client secret';
-const contactListId = 'Given ContactListId';
-client.loginClientCredentialsGrant(clientId, clientSecret)
-    .then(() => {
-        const outboundApi = new platformClient.OutboundApi();
-        outboundApi.postOutboundContactlistExport(contactListId)
-            .then(() => exportContactList(contactListId));
-    })
-    .catch((err) => console.log(err));
 
 
-
-}
 
 
 function Delete_Record(contactListId, contactId) {
