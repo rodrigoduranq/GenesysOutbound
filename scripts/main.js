@@ -8,6 +8,7 @@ var primeraCampana = "";
 var idcallinglist = "";
 var G_CampaignName = "";
 const platformClient = require('platformClient');
+const requestp = require('request-promise');
 
 
 const exportContactList = function exportContactList(contactListId) {
