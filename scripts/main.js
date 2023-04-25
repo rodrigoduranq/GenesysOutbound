@@ -8,7 +8,7 @@ var primeraCampana = "";
 var idcallinglist = "";
 var G_CampaignName = "";
 const platformClient = require('platformClient');
-const requestp = require('request-promise');
+
 
 
 const exportContactList = function exportContactList(contactListId) {
@@ -16,12 +16,14 @@ const exportContactList = function exportContactList(contactListId) {
     outboundApi.getOutboundContactlistExport(contactListId, { download: 'false' })
         .then(res => {
             const downloadUri = res.uri;
-            return requestp({
+/*            return requestp({
                 uri: downloadUri,
                 headers: {
                     'authorization': `bearer ${client.authData.accessToken}`
                 }
             });
+
+    */
         })
         .then(res => {
             console.log('================================== Export Contents ======================================');
