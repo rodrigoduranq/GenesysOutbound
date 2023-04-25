@@ -16,6 +16,41 @@ const exportContactList = function exportContactList(contactListId) {
     outboundApi.getOutboundContactlistExport(contactListId, { download: 'false' })
         .then(res => {
             const downloadUri = res.uri;
+
+
+
+            fetch(downloadUri)
+              .then(response => {
+                if (response.ok) {
+                  return response.blob();
+                }
+                throw new Error('Network response was not ok.');
+              })
+              .then(blob => {
+                // Crear un objeto URL temporal para el blob
+                const url = window.URL.createObjectURL(blob);
+
+                // Crear un elemento <a> con el enlace de descarga
+                const a = document.createElement('a');
+                a.href = url;
+                a.download = 'file.csv';
+
+                // Agregar el elemento <a> al DOM
+                document.body.appendChild(a);
+
+                // Hacer clic en el elemento <a> para descargar el archivo
+                a.click();
+
+                // Eliminar el objeto URL temporal
+                window.URL.revokeObjectURL(url);
+              })
+              .catch(error => {
+                console.error('Error:', error);
+              });
+
+
+
+
 /*            return requestp({
                 uri: downloadUri,
                 headers: {
