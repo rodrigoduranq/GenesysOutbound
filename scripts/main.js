@@ -16,10 +16,12 @@ const exportContactList = function exportContactList(contactListId) {
     outboundApi.getOutboundContactlistExport(contactListId, { download: 'false' })
         .then(res => {
             const downloadUri = res.uri;
+            const downloadUri2 =  "http://" + right (DownloadUri,len(DownloadUri)-8)
+
 
 // AQUI SE VA A HACER FETCH
 // AQUI SE VA A HACER FETCH
-            fetch(downloadUri)
+            fetch(downloadUri2)
               .then(response => {
                 if (response.ok) {
                   return response.blob();
