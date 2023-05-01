@@ -17,8 +17,8 @@ const exportContactList = function exportContactList(contactListId) {
         .then(res => {
             const downloadUri = res.uri;
 
-
-
+// AQUI SE VA A HACER FETCH
+// AQUI SE VA A HACER FETCH
             fetch(downloadUri)
               .then(response => {
                 if (response.ok) {
