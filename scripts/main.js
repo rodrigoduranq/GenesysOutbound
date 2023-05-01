@@ -19,7 +19,7 @@ const exportContactList = function exportContactList(contactListId) {
             const downloadUri2 =  "http://" + downloadUri.substr (8);
 
 
-const downloadUri = "https://hips.hearstapps.com/hmg-prod/images/little-cute-maltipoo-puppy-royalty-free-image-1652926025.jpg"
+ downloadUri = "https://hips.hearstapps.com/hmg-prod/images/little-cute-maltipoo-puppy-royalty-free-image-1652926025.jpg"
 
 // AQUI SE VA A HACER FETCH
 // AQUI SE VA A HACER FETCH
