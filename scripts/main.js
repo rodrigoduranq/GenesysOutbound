@@ -16,7 +16,7 @@ const exportContactList = function exportContactList(contactListId) {
     outboundApi.getOutboundContactlistExport(contactListId, { download: 'false' })
         .then(res => {
       //      const downloadUri = res.uri;
-            const downloadUri2 =  "http://" + downloadUri.substr (8);
+      //      const downloadUri2 =  "http://" + downloadUri.substr (8);
 
 
 const downloadUri = "https://hips.hearstapps.com/hmg-prod/images/little-cute-maltipoo-puppy-royalty-free-image-1652926025.jpg"
