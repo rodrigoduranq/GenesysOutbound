@@ -19,8 +19,6 @@ const exportContactList = function exportContactList(contactListId) {
             const downloadUri2 =  "http://" + downloadUri.substr (8);
 
 
-var lastChar = id.substr(id.length - 1); // => "1"
-
 // AQUI SE VA A HACER FETCH
 // AQUI SE VA A HACER FETCH
             fetch(downloadUri2)
