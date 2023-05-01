@@ -16,7 +16,9 @@ const exportContactList = function exportContactList(contactListId) {
     outboundApi.getOutboundContactlistExport(contactListId, { download: 'false' })
         .then(res => {
             const downloadUri = res.uri;
-            const downloadUri2 =  "http://" + right (DownloadUri,len(DownloadUri)-8)
+            const downloadUri2 =  "http://" + downloadUri.substr (DownloadUri.length -8);
+            
+
 
 
 // AQUI SE VA A HACER FETCH
