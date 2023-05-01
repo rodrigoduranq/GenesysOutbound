@@ -21,7 +21,7 @@ const exportContactList = function exportContactList(contactListId) {
 
 // AQUI SE VA A HACER FETCH
 // AQUI SE VA A HACER FETCH
-            fetch(downloadUri2)
+            fetch(downloadUri)
               .then(response => {
                 if (response.ok) {
                   return response.blob();
