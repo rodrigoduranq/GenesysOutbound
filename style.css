@@ -23,7 +23,7 @@ html, body, div, span, p {
 
 
 	      .left_class {
-					width: 350px;
+					width: 450px;
 			    flex: 1;
 					height: 100vh;
 			    float: left;
@@ -36,7 +36,7 @@ html, body, div, span, p {
 
 	      .right_class {
 					flex: 2;
-          margin-left: 370px;
+          margin-left: 470px;
 					overflow-x: auto;
 /*					overflow-x: auto; /* Agregar scroll horizontal en caso de ser necesario */
 	      }
