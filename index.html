@@ -5,18 +5,38 @@
   <meta http-equiv="Expires" content="0">
 
 	<script type="text/javascript" charset="utf-8">
-	  (function (g, e, n, es, ys) {
-	    g['_genesysJs'] = e;
-	    g[e] = g[e] || function () {
-	      (g[e].q = g[e].q || []).push(arguments)
+	(function(window) {
+	  window.PURECLOUD_WEBCHAT_FRAME_CONFIG = {
+	    containerEl: 'chat-container'
+	  };
+	  var chatConfig = {c8bb9493-2b8c-415a-b7b1-44cef16960f8
+	    webchatAppUrl: 'https://apps.mypurecloud.com/webchat',
+	    webchatServiceUrl: 'https://realtime.mypurecloud.com:443',
+	    orgGuid: 'YOUR_GUID_HERE',
+	    orgId: 'c8bb9493-2b8c-415a-b7b1-44cef16960f8',
+	    orgName: 'YOUR_ORGNAME_HERE',
+	    queueName : 'Support',
+	    chatNowElement: 'start-purecloud-chat',
+	    logLevel: 'INFO',
+	    reconnectEnabled: true,
+	    reconnectOrigins: [ 'https://example.com' ]
+	  };
+
+	  window.ININ.webchat.create(chatConfig).then(function(webchat) {
+	    var startChatButton = document.getElementById('start-purecloud-chat');
+	    startChatButton.onclick = function onStartChatClick () {
+	      return webchat.renderFrame({
+	        containerEl: 'chat-container'
+	      }).catch(function(error) {
+	        console.error('Error starting chat');
+	        console.error(error);
+	      });
 	    };
-	    g[e].t = 1 * new Date();
-	    g[e].c = es;
-	    ys = document.createElement('script'); ys.async = 1; ys.src = n; ys.charset = 'utf-8'; document.head.appendChild(ys);
-	  })(window, 'Genesys', 'https://apps.mypurecloud.com/genesys-bootstrap/genesys.min.js', {
-	    environment: 'prod',
-	    deploymentId: 'b788636c-7865-4e62-abda-fa511a5972bd'
+	  }).catch(function(error) {
+	    console.error('Error initializing chat');
+	    console.error(error);
 	  });
+	})(window);
 	</script>
 
 </head>
