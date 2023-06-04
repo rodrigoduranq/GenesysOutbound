@@ -3,89 +3,28 @@
 <head>
 	<title>Calling List Viewer</title>
   <meta http-equiv="Expires" content="0">
-	<script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha256-cCueBR6CsyA4/9szpPfrX3s49M9vUU5BgtiJj06wt/s=" crossorigin="anonymous"></script>
-  <script src="https://sdk-cdn.mypurecloud.com/javascript/158.0.0/purecloud-platform-client-v2.min.js"></script>
 
-	<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/1.5.12/clipboard.min.js"></script>
-
-<!--	<script src="./scripts/helpers.js"></script>   -->
-	<script src="./scripts/main.js"></script>
-
-	<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-T8Gy5hrqNKT+hzMclPo118YTQO6cYprQmhrYwIiQ/3axmI1hQomh7Ud2hPOy8SP1" crossorigin="anonymous">
-	<link rel="stylesheet" type="text/css" href="./style.css" />
-
-<!--
-	<script>
-   	const miCheckbox = document.getElementById("mi-checkbox");
-
-	miCheckbox.addEventListener("change", function() {
-		if (miCheckbox.checked) {
-			miFuncionActivado();
-		} else {
-			miFuncionDesactivado();
-		}
-	});
-
-	function miFuncionActivado() {
-		console.log("El botón está activado");
-		// Aquí puedes agregar el código que se ejecutará cuando el botón esté activado
-	}
-
-	function miFuncionDesactivado() {
-		console.log("El botón está desactivado");
-		// Aquí puedes agregar el código que se ejecutará cuando el botón esté desactivado
-	}
-
-	function DesactivaBoton() {
-	    miCheckbox.checked = false;
-	}
-
-	function ActivaBoton() {
-	    miCheckbox.checked = true;
-	}
+	<script type="text/javascript" charset="utf-8">
+	  (function (g, e, n, es, ys) {
+	    g['_genesysJs'] = e;
+	    g[e] = g[e] || function () {
+	      (g[e].q = g[e].q || []).push(arguments)
+	    };
+	    g[e].t = 1 * new Date();
+	    g[e].c = es;
+	    ys = document.createElement('script'); ys.async = 1; ys.src = n; ys.charset = 'utf-8'; document.head.appendChild(ys);
+	  })(window, 'Genesys', 'https://apps.mypurecloud.com/genesys-bootstrap/genesys.min.js', {
+	    environment: 'prod',
+	    deploymentId: 'b788636c-7865-4e62-abda-fa511a5972bd'
+	  });
 	</script>
-	-->
+
 </head>
 
 
+
 <body  onload="updateRight('')">
+PAGINA PRINCIPAL
 
-  <div class="left_class">
-		<table id="TablaCampanas" class="table table-striped table-hover">
-			<thead>
-				<tr>
-					<th colspan="2">Campañas</th>
-				</tr>
-			</thead>
-			<tbody id="Campanas"></tbody>
-		</table>
-
-
-	</div>
-
-
-	<div class="right_class">
-
-         <p>  <b>Nombre de la Campaña: </b> <span id = "N_Campana"></span>
-				 <p>  <b>Nombre de la Contact List: </b> <span id = "N_CallingList"></span>
-<p></p>
-				 <label class="mi-checkbox">
- 	       <input type="checkbox" id="mi-checkbox">
-	       <span class="mi-checkbox-span"></span>
-	       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span id = "N_Status"></span>
-	     </label>
-<p>
-        <p id="right">
-		<p>
-		<p>
-
-<button onclick="Borrar_Registro()">Borrar Registro</button>
-<button onclick="Anadir_Registro()">Añadir Registro</button>
-<button onclick="Exportar_Calling()">Exportar CL</button>
-
-	</div>
 </body>
 </html>
